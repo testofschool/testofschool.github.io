@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jung Min Kang (Felix) - AI Evaluation Researcher portfolio.">
+  <title>Jung Min Kang (Felix)</title>
+  <style>
+    :root {
+      --bg: #0c0c0f;
+      --fg: #f1f1ea;
+      --accent: #b8ff5c;
+      --line: rgb(241 241 234 / 0.18);
+      --muted: rgb(241 241 234 / 0.68);
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+    }
+
+    a,
+    button {
+      color: var(--fg);
+      font: inherit;
+    }
+
+    a {
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+      transition: color 140ms ease, text-decoration-color 140ms ease;
+    }
+
+    a:hover,
+    a:focus-visible,
+    button:hover,
+    button:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    [data-lang][hidden] {
+      display: none !important;
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 22px;
+      right: 24px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0 4px 14px;
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .language-toggle button {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .language-toggle button[aria-pressed="true"] {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.28em;
+    }
+
+    .language-toggle .divider {
+      color: var(--muted);
+    }
+
+    .page {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 28px 24px 72px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 6px 260px 72px 0;
+      font-size: 0.85rem;
+    }
+
+    .mark {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 62vh;
+      display: grid;
+      align-content: center;
+      padding: 24px 0 92px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker,
+    .status,
+    .company,
+    .section-subtitle,
+    .contact-label {
+      color: var(--muted);
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      font-size: 0.9rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      max-width: 980px;
+      font-size: clamp(2.35rem, 8vw, 6rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .one-liner {
+      max-width: 820px;
+      margin-bottom: 16px;
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
+      line-height: 1.45;
+    }
+
+    .sub-line {
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+    }
+
+    .link-row a,
+    .contact-list a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+    }
+
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin-bottom: 0;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.5;
+    }
+
+    .list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+    .item-index {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: clamp(1.1rem, 2.1vw, 1.6rem);
+      line-height: 1.28;
+      font-weight: 700;
+    }
+
+    .status,
+    .company {
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+
+    .item p {
+      max-width: 850px;
+      margin-bottom: 14px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 0.92rem;
+    }
+
+    .links span {
+      color: var(--muted);
+    }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) 1fr;
+      gap: 28px;
+    }
+
+    .about-copy {
+      max-width: 850px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+      line-height: 1.75;
+    }
+
+    .about-copy p {
+      margin-bottom: 24px;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      max-width: 620px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .footer {
+      padding-top: 54px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 880px) {
+      .topbar {
+        display: block;
+        padding-right: 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        margin-top: 14px;
+        padding-right: 210px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 18px 18px 48px;
+      }
+
+      .language-toggle {
+        top: 14px;
+        right: 18px;
+        font-size: 0.8rem;
+      }
+
+      .topbar {
+        padding-bottom: 54px;
+      }
+
+      .nav {
+        gap: 8px 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 30px 0 68px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .section-head,
+      .item,
+      .about-body {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .section-head {
+        margin-bottom: 28px;
+      }
+
+      .item {
+        padding: 24px 0;
+      }
+
+      .item-index {
+        font-size: 0.78rem;
+      }
+
+      .contact-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    @media (max-width: 470px) {
+      body {
+        font-size: 15px;
+      }
+
+      .nav {
+        padding-right: 0;
+      }
+
+      .link-row {
+        gap: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" aria-label="Language selector">
+    <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+    <span class="divider">|</span>
+    <button type="button" data-set-lang="ko" aria-pressed="false">한국어</button>
+    <span class="divider">|</span>
+    <button type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+  </div>
+
+  <div class="page">
+    <header class="topbar" aria-label="Site header">
+      <div class="mark"><span data-lang="en">JMK</span><span data-lang="ko" hidden>JMK</span><span data-lang="zh" hidden>JMK</span></div>
+      <nav class="nav" aria-label="Section navigation">
+        <a href="#research"><span data-lang="en">Research</span><span data-lang="ko" hidden>연구</span><span data-lang="zh" hidden>研究</span></a>
+        <a href="#production"><span data-lang="en">Production</span><span data-lang="ko" hidden>프로덕션</span><span data-lang="zh" hidden>作品</span></a>
+        <a href="#about"><span data-lang="en">About</span><span data-lang="ko" hidden>소개</span><span data-lang="zh" hidden>關於</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="ko" hidden>연락처</span><span data-lang="zh" hidden>聯繫方式</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="kicker"><span data-lang="en">AI Evaluation Researcher · KR · EN · CN</span><span data-lang="ko" hidden>AI 평가 연구자 · 한국어 · 영어 · 중국어</span><span data-lang="zh" hidden>AI評估研究員 · 韓語 · 英語 · 中文</span></p>
+        <h1 id="hero-title"><span data-lang="en">Jung Min Kang (Felix)</span><span data-lang="ko" hidden>강정민 (Felix)</span><span data-lang="zh" hidden>Jung Min Kang (Felix)</span></h1>
+        <p class="one-liner"><span data-lang="en">I find problems nobody's looking at. Then I use AI to prove they're real.</span><span data-lang="ko" hidden>아무도 안 보는 문제를 찾고, AI로 증명합니다.</span><span data-lang="zh" hidden>我尋找沒人關注的問題，然後用AI證明它們是真實的。</span></p>
+        <p class="sub-line"><span data-lang="en">AI Evaluation Researcher · KR · EN · CN</span><span data-lang="ko" hidden>AI 평가 연구자 · 한국어 · 영어 · 중국어</span><span data-lang="zh" hidden>AI評估研究員 · 韓語 · 英語 · 中文</span></p>
+        <div class="link-row" aria-label="Primary links">
+          <a href="https://github.com/testofschool"><span data-lang="en">GitHub</span><span data-lang="ko" hidden>GitHub</span><span data-lang="zh" hidden>GitHub</span></a>
+          <a href="https://www.linkedin.com/in/kangjungmin"><span data-lang="en">LinkedIn</span><span data-lang="ko" hidden>LinkedIn</span><span data-lang="zh" hidden>LinkedIn</span></a>
+          <a href="https://arxiv.org/abs/2605.11205"><span data-lang="en">arXiv</span><span data-lang="ko" hidden>arXiv</span><span data-lang="zh" hidden>arXiv</span></a>
+          <a href="mailto:gangjeongmin23@gmail.com"><span data-lang="en">Email</span><span data-lang="ko" hidden>이메일</span><span data-lang="zh" hidden>電子郵件</span></a>
+        </div>
+      </section>
+
+      <section id="research" aria-labelledby="research-title">
+        <div class="section-head">
+          <h2 id="research-title"><span data-lang="en">Research</span><span data-lang="ko" hidden>연구</span><span data-lang="zh" hidden>研究</span></h2>
+          <p class="section-subtitle"><span data-lang="en">6 papers in my first week. 1 live on arXiv. AI writes the code. I find the problems.</span><span data-lang="ko" hidden>첫 주에 논문 6편. arXiv 1편 게재. AI가 코드를 쓰고, 저는 문제를 찾습니다.</span><span data-lang="zh" hidden>第一週寫了6篇論文。1篇已在arXiv發表。AI寫代碼，我找問題。</span></p>
+        </div>
+
+        <div class="list">
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 1 — LIVE</span><span data-lang="ko" hidden>논문 1 — 게재</span><span data-lang="zh" hidden>論文 1 — 已發表</span></div>
+            <div>
+              <h3><span data-lang="en">The Scaling Law of Evaluation Failure</span><span data-lang="ko" hidden>평가 실패의 스케일링 법칙</span><span data-lang="zh" hidden>評估失敗的Scaling Law</span></h3>
+              <p class="status"><span data-lang="en">Published on arXiv (May 11, 2026)</span><span data-lang="ko" hidden>arXiv 게재 (2026년 5월 11일)</span><span data-lang="zh" hidden>已在arXiv發表（2026年5月11日）</span></p>
+              <p><span data-lang="en">150-condition simulation proving simple averaging breaks AI model rankings. IRT maintains ρ ≥ 0.993 where averaging drops to 0.24.</span><span data-lang="ko" hidden>150개 조건 시뮬레이션. 단순 평균이 AI 모델 순위를 왜곡함을 증명. IRT는 ρ ≥ 0.993 유지, 평균은 0.24까지 하락.</span><span data-lang="zh" hidden>150條件模擬，證明簡單平均會破壞AI模型排名。IRT維持ρ ≥ 0.993，而平均法下降到0.24。</span></p>
+              <div class="links">
+                <a href="https://arxiv.org/abs/2605.11205"><span data-lang="en">arXiv</span><span data-lang="ko" hidden>arXiv</span><span data-lang="zh" hidden>arXiv</span></a>
+                <span>|</span>
+                <a href="https://github.com/testofschool/evaluation-failure-scaling-law"><span data-lang="en">Code</span><span data-lang="ko" hidden>코드</span><span data-lang="zh" hidden>代碼</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 2</span><span data-lang="ko" hidden>논문 2</span><span data-lang="zh" hidden>論文 2</span></div>
+            <div>
+              <h3><span data-lang="en">Isomorph-Eval: Separating Reasoning from Recall in LLM Evaluation</span><span data-lang="ko" hidden>Isomorph-Eval: LLM 평가에서 추론과 암기 분리</span><span data-lang="zh" hidden>Isomorph-Eval：在LLM評估中分離推理與記憶</span></h3>
+              <p class="status"><span data-lang="en">Preprint</span><span data-lang="ko" hidden>프리프린트</span><span data-lang="zh" hidden>Preprint</span></p>
+              <p><span data-lang="en">Benchmark contamination detection via tau-isomorphism. Caught 41% error rate in my own variant-answer pipeline before publishing.</span><span data-lang="ko" hidden>그래프 이론 기반 벤치마크 오염 탐지. 자체 파이프라인의 41% 오류율 발견 후 보고.</span><span data-lang="zh" hidden>透過tau-isomorphism檢測benchmark contamination。在發表前，發現自己variant-answer pipeline中41%的錯誤率。</span></p>
+              <div class="links">
+                <a href="https://github.com/testofschool/isomorph-eval"><span data-lang="en">Code</span><span data-lang="ko" hidden>코드</span><span data-lang="zh" hidden>代碼</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 3</span><span data-lang="ko" hidden>논문 3</span><span data-lang="zh" hidden>論文 3</span></div>
+            <div>
+              <h3><span data-lang="en">IRT-Scored Physical AI</span><span data-lang="ko" hidden>IRT 기반 Physical AI 평가</span><span data-lang="zh" hidden>IRT評分的Physical AI</span></h3>
+              <p class="status"><span data-lang="en">Submitted to CoRL 2026</span><span data-lang="ko" hidden>CoRL 2026 제출</span><span data-lang="zh" hidden>已提交至CoRL 2026</span></p>
+              <p><span data-lang="en">124 VLA models, 18 benchmarks, 781 observations. One model's rank shifted 78 positions under IRT vs simple averaging.</span><span data-lang="ko" hidden>124개 VLA 모델, 18개 벤치마크, 781개 관측값. IRT 적용 시 한 모델의 순위가 78계단 변동. CoRL 2026 제출.</span><span data-lang="zh" hidden>124個VLA模型、18個benchmarks、781筆觀測。相較於簡單平均，一個模型在IRT下排名移動了78位。</span></p>
+              <div class="links">
+                <span><span data-lang="en">Coming soon</span><span data-lang="ko" hidden>공개 예정</span><span data-lang="zh" hidden>即將公開</span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 4</span><span data-lang="ko" hidden>논문 4</span><span data-lang="zh" hidden>論文 4</span></div>
+            <div>
+              <h3><span data-lang="en">Reverse IRT for Fragmented Cancer Drug-Response Matrices</span><span data-lang="ko" hidden>암 약물 반응 행렬의 역IRT 분석</span><span data-lang="zh" hidden>用於碎片化癌症藥物反應矩陣的Reverse IRT</span></h3>
+              <p class="status"><span data-lang="en">Preprint</span><span data-lang="ko" hidden>프리프린트</span><span data-lang="zh" hidden>Preprint</span></p>
+              <p><span data-lang="en">Applied IRT to 242,036 cancer drug sensitivity measurements (GDSC2). 82% cross-platform agreement with PRISM. Reported honest negative on weak rank-order.</span><span data-lang="ko" hidden>GDSC2 데이터 242,036건에 IRT 적용. 플랫폼 간 82% 방향 일치. 약한 순위 상관에 대한 정직한 부정적 결과 보고.</span><span data-lang="zh" hidden>將IRT應用於242,036筆癌症藥物敏感性測量（GDSC2）。與PRISM達到82%的跨平台方向一致。對弱rank-order誠實報告負面結果。</span></p>
+              <div class="links">
+                <a href="https://github.com/testofschool/reverse-irt-cancer"><span data-lang="en">Code</span><span data-lang="ko" hidden>코드</span><span data-lang="zh" hidden>代碼</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 5</span><span data-lang="ko" hidden>논문 5</span><span data-lang="zh" hidden>論文 5</span></div>
+            <div>
+              <h3><span data-lang="en">LLTM Evaluation: Linear Logistic Test Models for Feature-Based AI Evaluation</span><span data-lang="ko" hidden>LLTM 평가: 특성 기반 AI 평가를 위한 선형 로지스틱 테스트 모델</span><span data-lang="zh" hidden>LLTM Evaluation：用於特徵式AI評估的Linear Logistic Test Models</span></h3>
+              <p class="status"><span data-lang="en">Preprint</span><span data-lang="ko" hidden>프리프린트</span><span data-lang="zh" hidden>Preprint</span></p>
+              <p><span data-lang="en">Explaining why some benchmark items are harder than others using item features — not just fitting difficulty parameters.</span><span data-lang="ko" hidden>벤치마크 항목이 왜 어려운지를 항목 특성으로 설명 — 단순 난이도 추정이 아닌 구조적 접근.</span><span data-lang="zh" hidden>用item features解釋為什麼某些benchmark items更難，而不只是擬合difficulty parameters。</span></p>
+              <div class="links">
+                <a href="https://github.com/testofschool/lltm-evaluation"><span data-lang="en">Code</span><span data-lang="ko" hidden>코드</span><span data-lang="zh" hidden>代碼</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Paper 6</span><span data-lang="ko" hidden>논문 6</span><span data-lang="zh" hidden>論文 6</span></div>
+            <div>
+              <h3><span data-lang="en">Psychometric Content Routing (PCR)</span><span data-lang="ko" hidden>심리측정 콘텐츠 라우팅 (PCR)</span><span data-lang="zh" hidden>Psychometric Content Routing (PCR)</span></h3>
+              <p class="status"><span data-lang="en">In progress</span><span data-lang="ko" hidden>진행 중</span><span data-lang="zh" hidden>進行中</span></p>
+              <p><span data-lang="en">One sigmoid, one sort, zero GPU cost. Matches content difficulty to user ability before LLM generates anything. PCR: 6.06/10 vs difficulty-only: 3.67/10 (p = 0.004).</span><span data-lang="ko" hidden>시그모이드 하나, 정렬 하나, GPU 비용 제로. LLM 생성 전 사용자 수준에 맞는 콘텐츠 선별. PCR: 6.06/10 vs 난이도 기반: 3.67/10 (p = 0.004).</span><span data-lang="zh" hidden>一個sigmoid、一次排序、零GPU成本。在LLM生成任何內容前，將內容難度匹配到使用者能力。PCR：6.06/10 vs difficulty-only：3.67/10（p = 0.004）。</span></p>
+              <div class="links">
+                <span><span data-lang="en">Coming soon</span><span data-lang="ko" hidden>공개 예정</span><span data-lang="zh" hidden>即將公開</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="production" aria-labelledby="production-title">
+        <div class="section-head">
+          <h2 id="production-title"><span data-lang="en">Production</span><span data-lang="ko" hidden>프로덕션</span><span data-lang="zh" hidden>作品</span></h2>
+          <p class="section-subtitle"><span data-lang="en">Work shipped outside the notebook.</span><span data-lang="ko" hidden>노트북 밖으로 나간 작업.</span><span data-lang="zh" hidden>不只停留在筆記本裡的作品。</span></p>
+        </div>
+
+        <div class="list">
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Item 1</span><span data-lang="ko" hidden>프로젝트 1</span><span data-lang="zh" hidden>項目 1</span></div>
+            <div>
+              <h3><span data-lang="en">100% AI Music Video Pipeline</span><span data-lang="ko" hidden>100% AI 뮤직비디오 파이프라인</span><span data-lang="zh" hidden>100% AI音樂影片製作流程</span></h3>
+              <p class="company"><span data-lang="en">(주)뉴텍 (2023–2025)</span><span data-lang="ko" hidden>(주)뉴텍 (2023–2025)</span><span data-lang="zh" hidden>Newtech Co., Ltd.（2023–2025）</span></p>
+              <p><span data-lang="en">Built end-to-end AI production workflow. Tested 4+ tools (Midjourney, Kling AI, MiniMax, Gen-3 Alpha). Cut production from 3 months to 1 month (67%). MV shipped through company's existing Warner Music Korea channel.</span><span data-lang="ko" hidden>AI 도구 4종 이상 테스트 후 제작 워크플로우 설계. 제작 기간 3개월 → 1개월 (67% 단축). 회사의 기존 워너뮤직코리아 채널로 유통.</span><span data-lang="zh" hidden>測試4+種AI工具，設計製作流程。製作時間從3個月縮短至1個月（67%）。透過公司既有的Warner Music Korea渠道發行。</span></p>
+              <div class="links">
+                <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859"><span data-lang="en">SBS News Coverage (Mar 2025)</span><span data-lang="ko" hidden>SBS 뉴스 보도 (2025년 3월)</span><span data-lang="zh" hidden>SBS新聞報導（2025年3月）</span></a>
+                <a href="https://www.youtube.com/watch?v=JsT445NqkMk"><span data-lang="en">AYOUNG 'Waiting for the Sunshine' MV</span><span data-lang="ko" hidden>AYOUNG 'Waiting for the Sunshine' MV</span><span data-lang="zh" hidden>AYOUNG 'Waiting for the Sunshine' MV</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="item-index"><span data-lang="en">Item 2</span><span data-lang="ko" hidden>프로젝트 2</span><span data-lang="zh" hidden>項目 2</span></div>
+            <div>
+              <h3><span data-lang="en">Edinburgh Fringe 2023 — First International Company Manager</span><span data-lang="ko" hidden>에든버러 프린지 2023 — 최초 해외 파견 컴퍼니 매니저</span><span data-lang="zh" hidden>愛丁堡藝穗節2023 — 首位海外派遣公司經理</span></h3>
+              <p><span data-lang="en">AtoBiz selected our artist from ~3,000 applicants (5 teams chosen). First person from the company sent internationally. Handled interpretation, logistics, and artist representation in Edinburgh, UK.</span><span data-lang="ko" hidden>AtoBiz가 약 3,000팀 중 5팀 선정. 회사 최초 해외 파견. 통역, 현장 관리, 아티스트 대표.</span><span data-lang="zh" hidden>AtoBiz從約3,000個團隊中選出5個。公司首次國際派遣。負責翻譯、現場管理、藝人代表。</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <div class="about-body">
+          <h2 id="about-title"><span data-lang="en">About</span><span data-lang="ko" hidden>소개</span><span data-lang="zh" hidden>關於</span></h2>
+          <div class="about-copy">
+            <p><span data-lang="en">In my first week of May 2026, I wrote 6 research papers. No lab, no institution — just AI as my execution layer.</span><span data-lang="ko" hidden>2026년 5월 첫 주, 연구 논문 6편을 썼습니다. 연구실도, 소속 기관도, GPU 클러스터도 없이 — AI를 실행 도구로 활용했습니다.</span><span data-lang="zh" hidden>2026年5月的第一週，我寫了6篇研究論文。沒有實驗室，沒有機構，也沒有GPU叢集——只是把AI當作我的執行工具。</span></p>
+
+            <p><span data-lang="en">I discovered that every major AI leaderboard uses simple averaging to rank models. It breaks when data is sparse. A 57-year-old psychometrics method called IRT fixes it. Nobody in AI evaluation was using it. So I did — and NIST reached the same conclusion independently.</span><span data-lang="ko" hidden>주요 AI 리더보드가 모델 순위를 매길 때 단순 평균을 쓴다는 걸 발견했습니다. 데이터가 희소하면 이 방법은 깨집니다. 57년 된 심리측정 방법론 IRT가 이 문제를 해결합니다. AI 평가 분야에서 아무도 쓰고 있지 않았습니다. 그래서 제가 했고 — NIST가 독립적으로 같은 결론에 도달했습니다.</span><span data-lang="zh" hidden>我發現主要AI排行榜在排列模型名次時都使用簡單平均。當資料稀疏時，這個方法會失效。一個已有57年歷史的心理測量方法IRT可以解決這個問題。AI評估領域沒有人在用它。所以我用了——而NIST也獨立得出了相同結論。</span></p>
+
+            <p><span data-lang="en">Before research, I spent 2.5 years at an entertainment company that gave me real opportunities. When they needed someone to figure out AI for music videos, I built the pipeline: tested 4+ tools, designed the workflow, cut production from 3 months to 1 month. The MV went through their existing Warner Music Korea distribution. SBS News covered it.</span><span data-lang="ko" hidden>연구 이전에는 2년 반 동안 엔터테인먼트 회사에서 일했습니다. 좋은 기회를 많이 주신 회사였습니다. AI로 뮤직비디오를 만들어야 했을 때, 도구를 테스트하고 워크플로우를 설계해서 제작 기간을 3개월에서 1개월로 줄였습니다. 회사의 기존 워너뮤직코리아 유통 채널을 통해 배포되었고, SBS 뉴스에 보도되었습니다.</span><span data-lang="zh" hidden>做研究之前，我在一家娛樂公司工作了兩年半。那家公司給了我很多真正的機會。當他們需要有人用AI製作音樂影片時，我測試工具、設計工作流程，將製作時間從3個月縮短到1個月。MV透過公司既有的Warner Music Korea發行渠道發布，並獲得SBS新聞報導。</span></p>
+
+            <p><span data-lang="en">That experience taught me I'm fast at finding problems and shipping solutions. AI taught me I can do it at research scale too.</span><span data-lang="ko" hidden>그 경험에서 배운 것 — 문제를 찾고, 빠르게 해결책을 내놓는 것. AI 덕분에 연구 규모에서도 똑같이 할 수 있게 되었습니다.</span><span data-lang="zh" hidden>那段經驗讓我學到的是——找到問題，並快速交付解決方案。AI讓我能在研究規模上做同樣的事。</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="section-head">
+          <h2 id="contact-title"><span data-lang="en">Contact</span><span data-lang="ko" hidden>연락처</span><span data-lang="zh" hidden>聯繫方式</span></h2>
+          <p class="section-subtitle"><span data-lang="en">Minimal links, direct routes.</span><span data-lang="ko" hidden>필요한 링크만, 바로 연결됩니다.</span><span data-lang="zh" hidden>最少連結，直接抵達。</span></p>
+        </div>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label"><span data-lang="en">Email</span><span data-lang="ko" hidden>이메일</span><span data-lang="zh" hidden>電子郵件</span></span>
+            <a href="mailto:gangjeongmin23@gmail.com"><span data-lang="en">gangjeongmin23@gmail.com</span><span data-lang="ko" hidden>gangjeongmin23@gmail.com</span><span data-lang="zh" hidden>gangjeongmin23@gmail.com</span></a>
+          </li>
+          <li>
+            <span class="contact-label"><span data-lang="en">GitHub</span><span data-lang="ko" hidden>GitHub</span><span data-lang="zh" hidden>GitHub</span></span>
+            <a href="https://github.com/testofschool"><span data-lang="en">github.com/testofschool</span><span data-lang="ko" hidden>github.com/testofschool</span><span data-lang="zh" hidden>github.com/testofschool</span></a>
+          </li>
+          <li>
+            <span class="contact-label"><span data-lang="en">LinkedIn</span><span data-lang="ko" hidden>LinkedIn</span><span data-lang="zh" hidden>LinkedIn</span></span>
+            <a href="https://www.linkedin.com/in/kangjungmin"><span data-lang="en">linkedin.com/in/kangjungmin</span><span data-lang="ko" hidden>linkedin.com/in/kangjungmin</span><span data-lang="zh" hidden>linkedin.com/in/kangjungmin</span></a>
+          </li>
+          <li>
+            <span class="contact-label"><span data-lang="en">arXiv</span><span data-lang="ko" hidden>arXiv</span><span data-lang="zh" hidden>arXiv</span></span>
+            <a href="https://arxiv.org/abs/2605.11205"><span data-lang="en">arxiv.org/abs/2605.11205</span><span data-lang="ko" hidden>arxiv.org/abs/2605.11205</span><span data-lang="zh" hidden>arxiv.org/abs/2605.11205</span></a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span data-lang="en">testofschool.github.io</span><span data-lang="ko" hidden>testofschool.github.io</span><span data-lang="zh" hidden>testofschool.github.io</span>
+    </footer>
+  </div>
+
+  <script>
+    let currentLanguage = "en";
+
+    const pageTitles = {
+      en: "Jung Min Kang (Felix)",
+      ko: "강정민 (Felix)",
+      zh: "Jung Min Kang (Felix)"
+    };
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language === "zh" ? "zh-Hant" : language;
+      document.title = pageTitles[language];
+
+      document.querySelectorAll("[data-lang]").forEach((node) => {
+        node.hidden = node.dataset.lang !== language;
+      });
+
+      document.querySelectorAll("[data-set-lang]").forEach((button) => {
+        const isActive = button.dataset.setLang === language;
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    }
+
+    document.querySelectorAll("[data-set-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+
+    document.querySelectorAll('a[href^="http"]').forEach((link) => {
+      link.rel = "noopener noreferrer";
+      link.target = "_blank";
+    });
+
+    setLanguage(currentLanguage);
+  </script>
+</body>
+</html>
