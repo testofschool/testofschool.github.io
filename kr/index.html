@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강정민 — 포트폴리오</title>
+<meta name="description" content="문제를 찾는 사람. AI는 실행 레이어. 단독 저술 arXiv 프리프린트, 전국 방송을 탄 100% AI 뮤직비디오, 플랫폼 집계 175M+ 조회수.">
+<link rel="canonical" href="https://testofschool.github.io/kr/">
+<link rel="alternate" hreflang="en" href="https://testofschool.github.io/">
+<link rel="alternate" hreflang="ko" href="https://testofschool.github.io/kr/">
+<link rel="alternate" hreflang="x-default" href="https://testofschool.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="강정민 — 포트폴리오">
+<meta property="og:description" content="문제를 찾는 사람. AI는 실행 레이어. 단독 저술 arXiv 프리프린트, 전국 방송을 탄 100% AI 뮤직비디오, 플랫폼 집계 175M+ 조회수.">
+<meta property="og:url" content="https://testofschool.github.io/kr/">
+<meta property="og:image" content="https://testofschool.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="강정민 — 포트폴리오">
+<meta name="twitter:image" content="https://testofschool.github.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "KANG JUNG MIN",
+  "alternateName": "강정민",
+  "jobTitle": "Independent Researcher",
+  "email": "mailto:gangjeongmin23@gmail.com",
+  "url": "https://testofschool.github.io/",
+  "sameAs": [
+    "https://github.com/testofschool",
+    "https://www.linkedin.com/in/kangjungmin",
+    "https://arxiv.org/abs/2605.11205"
+  ],
+  "knowsLanguage": ["ko", "en", "zh"]
+}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" href="/assets/fonts/pretendard/PretendardVariable.site-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{
+    font-family:"Pretendard Variable"; font-style:normal; font-display:swap; font-weight:400 800;
+    src:url(/assets/fonts/pretendard/PretendardVariable.site-subset.woff2) format("woff2-variations");
+  }
+  @font-face{
+    font-family:"JetBrains Mono"; font-style:normal; font-weight:400; font-display:swap;
+    src:url(/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2) format("woff2");
+  }
+  @font-face{
+    font-family:"JetBrains Mono"; font-style:normal; font-weight:700; font-display:swap;
+    src:url(/assets/fonts/jetbrains-mono/JetBrainsMono-Bold.woff2) format("woff2");
+  }
+  :root{
+    --paper:#F7F5EF;
+    --ink:#17150F;
+    --navy:#1C4587;
+    --graphite:#5B574B;
+    --hairline:#E0DBCC;
+    --maxw:1040px;
+    --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    word-break:keep-all;
+  }
+  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(28,69,135,.35); transition:border-color .15s}
+  a:hover{border-bottom-color:var(--navy)}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--navy); outline-offset:3px}
+  ::selection{background:var(--navy); color:var(--paper)}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; gap:20px;
+    padding:10px 24px;
+    background:rgba(247,245,239,.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
+    font-family:var(--mono); font-size:12px; letter-spacing:.02em;
+  }
+  .topbar .brand{font-weight:700; color:var(--ink); border:none}
+  .topbar nav{display:flex; gap:16px; flex-wrap:wrap}
+  .topbar nav a{color:var(--graphite); border:none}
+  .topbar nav a:hover{color:var(--navy)}
+  .topbar .spacer{flex:1}
+  .lang{display:flex; gap:10px; align-items:center}
+  .lang a{color:var(--graphite); border:none; font-weight:400}
+  .lang a[aria-current]{color:var(--navy); font-weight:700}
+  .lang a:hover{color:var(--navy)}
+  .lang .sep{color:var(--hairline)}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  section{padding:88px 0 32px; border-bottom:1px solid var(--hairline)}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; font-weight:400;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--graphite);
+    margin-bottom:22px;
+  }
+  .eyebrow .no{color:var(--navy); font-weight:700; margin-right:10px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:150px 0 64px}
+  .hero .id{
+    font-family:var(--mono); font-size:13px; letter-spacing:.1em;
+    color:var(--graphite); text-transform:uppercase; margin-bottom:26px;
+  }
+  .hero .id b{color:var(--ink); font-weight:700}
+  h1.thesis{
+    font-weight:800; letter-spacing:-.035em; line-height:1.18;
+    font-size:clamp(42px, 7.2vw, 92px);
+    max-width:12em;
+  }
+  h1.thesis .proof-half{color:var(--navy)}
+  .hero .subline{
+    margin-top:28px; max-width:32em; font-size:18px; color:var(--ink);
+  }
+  .hero .subline .quiet{color:var(--graphite)}
+  .statgrid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    margin-top:56px; border-top:1px solid var(--ink);
+  }
+  .stat{padding:22px 24px 26px 0; border-right:1px solid var(--hairline)}
+  .stat:last-child{border-right:none; padding-right:0}
+  .stat .big{
+    font-family:var(--mono); font-weight:700; letter-spacing:-.02em;
+    font-size:clamp(28px, 3.4vw, 44px); color:var(--ink);
+  }
+  .stat .label{font-size:15px; font-weight:600; margin-top:6px}
+  .cap{
+    font-family:var(--mono); font-size:11.5px; line-height:1.55;
+    color:var(--graphite); margin-top:10px;
+  }
+  .hero .links{
+    margin-top:44px; display:flex; gap:22px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:13px;
+  }
+  .hero .whyhire{
+    display:inline-block; margin-top:30px;
+    font-family:var(--mono); font-size:13px; font-weight:700; color:var(--navy);
+    border:none;
+  }
+  .hero .whyhire:hover{text-decoration:underline}
+
+  /* ---------- case grammar ---------- */
+  .case-intro{max-width:40em; font-size:17px; color:var(--graphite); margin-bottom:8px}
+  .case{padding-top:56px}
+  .case h2{
+    font-size:clamp(26px, 3.2vw, 40px); font-weight:800; letter-spacing:-.025em;
+    line-height:1.25; max-width:18em;
+  }
+  .case .meta{
+    font-family:var(--mono); font-size:12px; color:var(--graphite);
+    margin-top:12px; letter-spacing:.03em;
+  }
+  .grammar{margin-top:36px; border-top:1px solid var(--hairline)}
+  .row{
+    display:grid; grid-template-columns:150px 1fr; gap:28px;
+    padding:20px 0; border-bottom:1px solid var(--hairline);
+  }
+  .row .tag{
+    font-family:var(--mono); font-size:11.5px; font-weight:700;
+    letter-spacing:.13em; text-transform:uppercase; color:var(--navy);
+    padding-top:4px;
+  }
+  .row .body{max-width:40em; font-size:16.5px}
+  .row .body .q{color:var(--graphite)}
+  .resultgrid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px; width:100%;
+  }
+  .rnum .big{
+    font-family:var(--mono); font-weight:700; font-size:clamp(24px,2.6vw,34px);
+    letter-spacing:-.02em;
+  }
+  .rnum .label{font-size:14px; font-weight:600; margin-top:4px}
+  .honesty{
+    margin-top:18px; font-size:14.5px; color:var(--graphite);
+    padding-left:14px; border-left:2px solid var(--hairline);
+    max-width:40em;
+  }
+  .prooflinks{display:flex; gap:14px; flex-wrap:wrap}
+  .prooflinks a{
+    font-family:var(--mono); font-size:12.5px; font-weight:400;
+    border:1px solid var(--navy); border-radius:2px; padding:8px 14px;
+  }
+  .prooflinks a:hover{background:var(--navy); color:var(--paper)}
+  .prooflinks .flat{border:none; padding:8px 0; color:var(--graphite)}
+  .prooflinks .flat:hover{background:none; color:var(--navy)}
+
+  /* ---------- MV click-to-load embed ---------- */
+  .mv-embed{width:100%; max-width:640px; margin-bottom:14px}
+  .mv-frame{
+    position:relative; display:block; width:100%; aspect-ratio:16/9;
+    background:var(--ink); border:1px solid var(--hairline); border-radius:2px;
+    overflow:hidden; padding:0;
+  }
+  a.mv-frame{border-bottom:1px solid var(--hairline)}
+  .mv-frame img{display:block; width:100%; height:100%; object-fit:cover}
+  .mv-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .mv-play{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:64px; height:44px; border-radius:2px;
+    background:var(--navy); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:16px;
+    transition:transform .15s;
+  }
+  .mv-frame:hover .mv-play{transform:translate(-50%,-50%) scale(1.06)}
+
+  /* ---------- chart ---------- */
+  .chartbox{width:100%; margin-top:6px}
+  .chartbox svg{width:100%; height:auto; display:block}
+  .chart-cap{margin-top:8px}
+  .line-irt{stroke:var(--navy); stroke-width:3; fill:none}
+  .line-avg{stroke:var(--graphite); stroke-width:2.25; stroke-dasharray:7 6; fill:none}
+  .axis{stroke:var(--hairline); stroke-width:1}
+  .chart-label{font-family:var(--mono); font-size:12px; fill:var(--graphite)}
+  .chart-label.navy{fill:var(--navy); font-weight:700}
+  .chart-label.ink{fill:var(--ink); font-weight:700}
+
+  /* ---------- hiring case ---------- */
+  .hiring-intro{max-width:40em; font-size:18px}
+  .hiring-intro b{font-weight:700}
+  .objection{
+    display:grid; grid-template-columns:minmax(200px,.85fr) 1.6fr; gap:32px;
+    padding:26px 0; border-bottom:1px solid var(--hairline);
+    align-items:start;
+  }
+  .objection:first-of-type{border-top:1px solid var(--ink); margin-top:34px}
+  .objection .doubt{
+    font-weight:800; font-size:20px; letter-spacing:-.015em; line-height:1.35;
+  }
+  .objection .doubt .qmark{color:var(--navy)}
+  .objection .answer{font-size:16.5px; max-width:40em}
+  .objection .answer .cap{margin-top:8px}
+  .hiring-close{
+    margin-top:30px; font-size:15.5px; color:var(--graphite);
+    max-width:40em; font-style:normal;
+  }
+
+  /* ---------- ledger ---------- */
+  .ledger{margin-top:34px}
+  .ledger h3{
+    font-family:var(--mono); font-size:12px; font-weight:700;
+    letter-spacing:.13em; text-transform:uppercase; color:var(--ink);
+    padding-bottom:10px; border-bottom:1px solid var(--ink); margin-top:40px;
+  }
+  .lrow{
+    display:grid; grid-template-columns:1.25fr 1.7fr 130px 90px; gap:18px;
+    padding:12px 0; border-bottom:1px solid var(--hairline);
+    font-size:14.5px; align-items:baseline;
+  }
+  .lrow .lname{font-weight:600}
+  .lrow .lmetric{font-family:var(--mono); font-size:12.5px; color:var(--graphite)}
+  .lrow .lstatus{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--graphite)}
+  .lrow .lstatus.prep{color:var(--navy)}
+  .lrow .llink{font-family:var(--mono); font-size:12px; justify-self:end}
+
+  /* ---------- about / colophon / contact ---------- */
+  .about p{max-width:40em; margin-bottom:18px; font-size:17px}
+  .edu{margin-top:26px}
+  .edu .lrow{grid-template-columns:1.2fr 2fr 150px}
+  .colophon-list{margin-top:30px; border-top:1px solid var(--ink)}
+  .crow{
+    display:grid; grid-template-columns:220px 1fr; gap:28px;
+    padding:16px 0; border-bottom:1px solid var(--hairline); font-size:15.5px;
+  }
+  .crow .ck{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); padding-top:3px}
+  .crow .cv{max-width:40em}
+  .contact .cta{
+    font-size:clamp(24px,3vw,36px); font-weight:800; letter-spacing:-.02em;
+    max-width:18em; line-height:1.35;
+  }
+  .contact .cta a{border-bottom-width:3px}
+  .contact .links{
+    margin-top:34px; display:flex; gap:22px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:13px;
+  }
+  footer{
+    max-width:var(--maxw); margin:0 auto; padding:36px 24px 60px;
+    font-family:var(--mono); font-size:11.5px;
+    color:var(--graphite); display:flex; gap:8px; flex-direction:column;
+  }
+
+  /* ---------- reveal motion (JS-gated so no-JS renders everything) ---------- */
+  .js .reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease}
+  .js .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .js .reveal{opacity:1; transform:none; transition:none}
+    html{scroll-behavior:auto}
+    .line-irt,.line-avg{stroke-dashoffset:0 !important; opacity:1 !important; animation:none !important; transition:none !important}
+    .mv-play{transition:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    .topbar nav{display:none}
+    .hero{padding-top:120px}
+    .statgrid{grid-template-columns:1fr}
+    .stat{border-right:none; border-bottom:1px solid var(--hairline); padding:18px 0}
+    .stat:last-child{border-bottom:none}
+    .row{grid-template-columns:1fr; gap:8px}
+    .resultgrid{grid-template-columns:1fr; gap:20px}
+    .objection{grid-template-columns:1fr; gap:10px}
+    .lrow{grid-template-columns:1fr; gap:4px}
+    .lrow .llink{justify-self:start}
+    .crow{grid-template-columns:1fr; gap:6px}
+    .edu .lrow{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top">KJM</a>
+  <nav aria-label="섹션">
+    <a href="#cases">케이스</a>
+    <a href="#hiring">채용 케이스</a>
+    <a href="#index">인덱스</a>
+    <a href="#about">소개</a>
+    <a href="#colophon">콜로폰</a>
+    <a href="#contact">연락처</a>
+  </nav>
+  <div class="spacer"></div>
+  <nav class="lang" aria-label="언어">
+    <a href="/" hreflang="en" lang="en">EN</a>
+    <span class="sep">|</span>
+    <a href="/kr/" hreflang="ko" aria-current="page">KR</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ 00 HERO ============ -->
+  <section class="hero" id="top">
+    <p class="id reveal"><b>강정민 KANG JUNG MIN</b> — Seoul · KR / EN / 中文</p>
+    <h1 class="thesis reveal">아무도 안 보는 문제를 찾고, <span class="proof-half">AI로 증명합니다.</span></h1>
+    <p class="subline reveal">문제를 찾는 사람 — AI는 실행 레이어입니다. <span class="quiet">프로듀서에서 리서처로: AI 프로덕션, 평가 방법론, 배포된 제품을 넘나듭니다.</span></p>
+
+    <div class="statgrid reveal">
+      <div class="stat">
+        <div class="big">175M+</div>
+        <div class="label">누적 조회수 — 숏폼 채널 운영</div>
+        <div class="cap">플랫폼 집계 기준 · 회사 소유 채널 9개 · 3,300+개 영상 가공·발행 · AI 미사용 — 별도 스택</div>
+      </div>
+      <div class="stat">
+        <div class="big">ρ ≥ 0.993</div>
+        <div class="label">전 150조건 IRT 순위 안정성</div>
+        <div class="cap">단독 저술 arXiv 프리프린트 2605.11205 · 단순 평균은 최악 조건에서 ρ = 0.24까지 붕괴</div>
+      </div>
+      <div class="stat">
+        <div class="big">~1개월</div>
+        <div class="label">100% AI 뮤직비디오 → 전국 방송</div>
+        <div class="cap">2인 유닛 · Warner Music Korea 유통망으로 발매 (회사 채널) · SBS 뉴스, 2025.03</div>
+      </div>
+    </div>
+
+    <div class="links reveal">
+      <a href="https://github.com/testofschool">GitHub</a>
+      <a href="https://www.linkedin.com/in/kangjungmin">LinkedIn</a>
+      <a href="https://arxiv.org/abs/2605.11205">arXiv</a>
+      <a href="mailto:gangjeongmin23@gmail.com">Email</a>
+    </div>
+    <a class="whyhire reveal" href="#hiring">왜 뽑아야 하는가 — 반론에 영수증으로 답합니다 ↓</a>
+  </section>
+
+  <!-- ============ 01–03 CASES ============ -->
+  <section id="cases">
+    <p class="eyebrow reveal"><span class="no">01–03</span>Cases — one grammar</p>
+    <p class="case-intro reveal">케이스 3개, 문법 하나: <b>Problem → Diagnosis → Execution → Result → Proof.</b> 모든 숫자는 측정 방법을 달고 있습니다. 순서는 인과입니다 — 첫 케이스가 만든 질문에 두 번째 케이스가 답합니다.</p>
+
+    <!-- CASE 01 -->
+    <article class="case reveal">
+      <p class="eyebrow"><span class="no">CASE 01</span>Origin — production</p>
+      <h2>100% AI 생성 뮤직비디오, 전국 뉴스에.</h2>
+      <p class="meta">(주)뉴텍 · 음악·엔터테인먼트, 파주 · Assistant Producer · 2023.05 – 2025.10 · 2025.03 공개</p>
+      <div class="grammar">
+        <div class="row">
+          <div class="tag">Problem</div>
+          <div class="body">촬영 예산이 제한된 음악 회사에 뮤직비디오는 여전히 필요했습니다. 맡길 AI 팀은 없었고 — <span class="q">이 문제를 풀 유닛은 아직 존재하지 않았습니다.</span></div>
+        </div>
+        <div class="row">
+          <div class="tag">Diagnosis</div>
+          <div class="body">기존 방식의 촬영은 비용과 일정 양쪽에서 무리였습니다. 진짜 질문은 "AI가 영상을 만들 수 있나"가 아니라 <b>어떤 툴이 어떤 장면에서 살아남는가</b>였습니다. 한 벤더에 걸지 않고 장면 단위로 생성 툴을 비교 검증했고, 5종이 통과해 각자 이기는 장면 유형에 배치됐습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Execution</div>
+          <div class="body">회사 최초의 AI 프로덕션 유닛(2인)을 제안하고 구축했습니다. Midjourney, Kling AI, MiniMax, Runway Gen-3 Alpha, Topaz 5종을 선정·통합하고 — 툴마다 입력 문법이 달라 — 크로스툴 영어 프롬프트 엔지니어링을 전담해 하나의 편집 파이프라인으로 연결했습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Result</div>
+          <div class="body">
+            <div class="resultgrid">
+              <div class="rnum"><div class="big">100%</div><div class="label">AI 생성</div><div class="cap">모든 프레임</div></div>
+              <div class="rnum"><div class="big">~1개월</div><div class="label">기획 → 납품</div><div class="cap">2인 팀</div></div>
+              <div class="rnum"><div class="big">SBS</div><div class="label">전국 방송</div><div class="cap">뉴스 보도, 2025.03</div></div>
+            </div>
+            <p class="honesty">Warner Music Korea 유통망을 통해 발매 — 회사의 기존 레이블 채널이지 개인 크레딧이 아닙니다. 제 몫은 파이프라인입니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tag">Proof</div>
+          <div class="body">
+            <div class="mv-embed">
+              <a class="mv-frame" id="mvFrame" href="https://www.youtube.com/watch?v=JsT445NqkMk" aria-label="재생 — AYOUNG, Waiting for the Sunshine, 공식 뮤직비디오 (YouTube)">
+                <img src="https://i.ytimg.com/vi/JsT445NqkMk/maxresdefault.jpg" alt="AYOUNG — 'Waiting for the Sunshine' 100% AI 생성 뮤직비디오 스틸 프레임" loading="lazy" decoding="async" width="1280" height="720">
+                <span class="mv-play" aria-hidden="true">▶</span>
+              </a>
+              <p class="cap">AYOUNG — 'Waiting for the Sunshine' · 공식 YouTube 임베드, 클릭 시에만 로드</p>
+            </div>
+            <div class="prooflinks">
+              <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859">SBS 뉴스 보도</a>
+              <a class="flat" href="https://www.youtube.com/watch?v=JsT445NqkMk">YouTube에서 보기 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 02 -->
+    <article class="case reveal">
+      <p class="eyebrow"><span class="no">CASE 02</span>Method — research</p>
+      <h2>그 질문이 논문이 됐습니다: 평균은 언제 거짓말을 하는가?</h2>
+      <p class="meta">Independent Researcher · 단독 저술 · arXiv:2605.11205 · 2026.05 – 현재</p>
+      <div class="grammar">
+        <div class="row">
+          <div class="tag">Problem</div>
+          <div class="body">모든 리더보드가 점수를 평균 냅니다. 데이터가 희소하고 난이도 차이가 크면 그 평균은 순위를 조용히 뒤바꾸는데 — <span class="q">업계는 그걸 정답으로 취급합니다.</span> 프로덕션에서 계속 부딪히던 툴별 편차는 같은 실패의 한 층 아래 버전이었습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Diagnosis</div>
+          <div class="body">심리측정학은 인간 시험에서 이 문제를 수십 년 전에 풀었습니다. IRT를 LLM 평가에 적용한 선행연구는 존재합니다 — 제 기여는 체계적인 <b>"언제, 왜"</b>입니다: 4개 도메인 × 150조건 그리드로 평균이 무너지고 IRT가 버티는 지점을 정확히 지도화했습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Execution</div>
+          <div class="body">단독 저술, 무소속, GPU 없이 — IRT는 통계 모델이라 전체 그리드가 노트북에서 약 60초 만에 돕니다(NumPy/SciPy). arXiv endorsement는 교수 5명에게 보낸 콜드메일로 확보했고, 1명이 응답했습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Result</div>
+          <div class="body">
+            <div class="chartbox">
+              <svg viewBox="0 0 660 290" role="img" aria-label="도식: 단순 평균은 ρ 0.24까지 붕괴하지만 IRT는 전 150조건에서 ρ 0.993 이상 유지">
+                <line class="axis" x1="52" y1="20" x2="52" y2="240"/>
+                <line class="axis" x1="52" y1="240" x2="640" y2="240"/>
+                <text class="chart-label" x="52" y="262">완만한 조건</text>
+                <text class="chart-label" x="448" y="262">고희소 · 난이도 격차 →</text>
+                <text class="chart-label" x="8" y="36">ρ 1.0</text>
+                <text class="chart-label" x="8" y="196">ρ 0.24</text>
+                <line class="axis" x1="46" y1="30" x2="52" y2="30"/>
+                <line class="axis" x1="46" y1="192" x2="52" y2="192"/>
+                <path id="lineIRT" class="line-irt" d="M52,32 C220,32 420,33 636,35"/>
+                <text class="chart-label navy" x="368" y="24">IRT — 전 150조건 ρ ≥ 0.993</text>
+                <path id="lineAVG" class="line-avg" d="M52,34 C220,40 340,66 440,110 C520,146 580,176 636,192"/>
+                <text class="chart-label ink" x="380" y="176">단순 평균 — 최악 ρ = 0.24</text>
+              </svg>
+              <p class="cap chart-cap">헤드라인 결과의 도식 — 정확한 곡선과 150조건 전체는 논문에, arXiv:2605.11205</p>
+            </div>
+            <p class="honesty">반응 역시 벤치마크 대비로 측정했습니다: 논문 공개 포스트의 LinkedIn 노출 5,184회 — 팔로워 1K 미만 계정 중앙값 225의 23배 (MagicPost, 56.6만 포스트 분석) — 첫 주 Threads 조회 17,000+. Playco 공동창업자 Teddy Cross(Sequoia 투자, $1B+ 게이밍 기업)가 Discord에서 논문에 직접 반응했습니다 — 스크린샷으로 검증 가능합니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tag">Proof</div>
+          <div class="body prooflinks">
+            <a href="https://arxiv.org/abs/2605.11205">arXiv:2605.11205</a>
+            <a href="https://github.com/testofschool/evaluation-failure-scaling-law">코드 — GitHub</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 03 -->
+    <article class="case reveal">
+      <p class="eyebrow"><span class="no">CASE 03</span>Application — product</p>
+      <h2>2주에 라이브 앱 7개. 리텐션은 업계 평균의 2배.</h2>
+      <p class="meta">토스 미니앱 · 1인 · AI 에이전트 코딩 (Claude Code + Claude Design) · 2026.05</p>
+      <div class="grammar">
+        <div class="row">
+          <div class="tag">Problem</div>
+          <div class="body">캐주얼 미니앱은 Day 30이면 죽습니다 — 업계 D30 리텐션은 3–5% 수준. <span class="q">1인 AI 빌드 앱 대부분은 토이 단계를 못 벗어납니다.</span></div>
+        </div>
+        <div class="row">
+          <div class="tag">Diagnosis</div>
+          <div class="body">마케팅 예산 0원이라 유저 획득은 잘못된 레버였습니다. 검증 가능한 레버는 리텐션 설계: <b>데일리 스트릭과 컬렉션 루프</b>를 7개 앱 전부에 첫날부터 설계해 넣고, 공개 벤치마크와 대조해 측정했습니다.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Execution</div>
+          <div class="body">실제 React/TypeScript 코드베이스 — 노코드가 아닙니다. AI 에이전트 코딩 파이프라인(Claude Code + Claude Design), 1인, 서버·광고·결제 없음. 토스 유기적 트래픽만.</div>
+        </div>
+        <div class="row">
+          <div class="tag">Result</div>
+          <div class="body">
+            <div class="resultgrid">
+              <div class="rnum"><div class="big">50%</div><div class="label">Day-1 리텐션</div><div class="cap">쑥쑥정원 · 게임 평균 25–35%</div></div>
+              <div class="rnum"><div class="big">8–10%</div><div class="label">Day-30 리텐션</div><div class="cap">쑥쑥정원 · 캐주얼 게임 평균의 2배 — Business of Apps 2026, UXCam 2026</div></div>
+              <div class="rnum"><div class="big">7개/2주</div><div class="label">1인 출시</div><div class="cap">코드 타임스탬프 검증 가능</div></div>
+            </div>
+            <p class="honesty">유저 수는 작습니다 — 플랫폼 내 유기적 유입만, 획득 비용 ₩0. 주장은 리텐션 설계이고, 의도적으로 그렇게 프레이밍했습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tag">Proof</div>
+          <div class="body prooflinks">
+            <a href="https://github.com/testofschool">GitHub — 저장소·타임스탬프</a>
+            <span class="cap" style="align-self:center">토스 미니앱은 인앱 딥링크로 구동 — 리텐션 스크린샷은 요청 시 제공합니다.</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 04 HIRING CASE ============ -->
+  <section id="hiring">
+    <p class="eyebrow reveal"><span class="no">04</span>The hiring case</p>
+    <p class="hiring-intro reveal">채용은 <b>리스크 결정</b>입니다. 이 페이지의 일은 면접을 건너뛰는 쪽이 더 위험하게 느껴지게 만드는 것. 그래서 채용 담당자가 마땅히 제기할 반론을 먼저 꺼내고 — 영수증으로 답합니다.</p>
+
+    <div class="reveal">
+      <div class="objection">
+        <div class="doubt">"시켜야 움직이는 사람 아닌가<span class="qmark">?</span>"</div>
+        <div class="answer">뉴텍의 AI 유닛은 제가 제안하기 전엔 없었습니다 — 누구도 이 문제를 배정하지 않았습니다. 이후 같은 패턴이 두 번 반복됐습니다: 프리프린트와 앱 7개 모두 스스로 정한 과제로 시작해, 완성해 공개했습니다.
+          <div class="cap">영수증: SBS 방송 · arXiv:2605.11205 · 라이브 앱</div>
+        </div>
+      </div>
+      <div class="objection">
+        <div class="doubt">"시작만 하고 못 끝내는 것 아닌가<span class="qmark">?</span>"</div>
+        <div class="answer">14개월간 서로 다른 포맷 3종을 내놓았습니다: 전국 방송을 탄 뮤직비디오(~1개월, 2인 팀), 단독 저술 arXiv 프리프린트, 라이브 앱 7개(2주, 1인). 매체는 달라도 완주율은 같습니다.
+          <div class="cap">속도 기록: ~1개월 · ~2주 · 독립 연구 → 공개 프리프린트</div>
+        </div>
+      </div>
+      <div class="objection">
+        <div class="doubt">"학사 학위가 없다<span class="qmark">.</span>"</div>
+        <div class="answer">맞습니다 — 그러니 증거로 판단하십시오: 960시간 IBM × Red Hat AX 과정(LLM/RAG 워크플로우, watsonx, OpenShift, AWS EKS)과 콜드 아웃리치로 arXiv endorsement를 통과한 프리프린트. 전부 공개돼 있고 확인 가능합니다.
+          <div class="cap">학력 기록은 아래에 · arXiv 저자 메타데이터 확인 가능</div>
+        </div>
+      </div>
+      <div class="objection">
+        <div class="doubt">"숫자가 부풀려진 것 아닌가<span class="qmark">?</span>"</div>
+        <div class="answer">이 페이지의 모든 수치는 측정 방법을 달고 있습니다 — "플랫폼 집계", "회사 채널", "최악 조건". 부정적 결과도 공개합니다: 암 데이터 연구는 순위 상관이 약하게 나온 자체 결과를 숨기지 않고 그대로 보고합니다.
+          <div class="cap">사이트 전체 측정 캡션 · honest negative: reverse-IRT / GDSC2 저장소</div>
+        </div>
+      </div>
+      <div class="objection">
+        <div class="doubt">"글로벌 팀에 맞나<span class="qmark">?</span>"</div>
+        <div class="answer">한국어 네이티브 · 영어 유창(캐나다 온타리오 성장) · 중국어 회화. 에든버러 프린지 2023에 회사 최초 해외 대표로 파견 — 아티스트 통역과 현장 운영을 영어로, 단독 수행했습니다.
+          <div class="cap">KR / EN / 中文 · 운영 기록은 아래에</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="hiring-close reveal">이 답 중 귀사의 맥락에서 깨지는 게 있다면 — 그게 면접에서 제일 먼저 듣고 싶은 이야기입니다.</p>
+  </section>
+
+  <!-- ============ 05 INDEX ============ -->
+  <section id="index">
+    <p class="eyebrow reveal"><span class="no">05</span>Index — the ledger</p>
+    <p class="case-intro reveal">나머지 전부, 한 줄씩. 위와 같은 규칙: 이름, 숫자 하나, 상태, 소스.</p>
+
+    <div class="ledger reveal">
+      <h3>Research</h3>
+      <div class="lrow"><span class="lname">EFSL — 평가 실패의 스케일링 법칙</span><span class="lmetric">전 150조건 ρ ≥ 0.993 vs 평균 최악 0.24</span><span class="lstatus">preprint</span><a class="llink" href="https://arxiv.org/abs/2605.11205">arXiv</a></div>
+      <div class="lrow"><span class="lname">Isomorph-Eval</span><span class="lmetric">공개 전 자체 variant 파이프라인에서 41% 오류율 적발</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/isomorph-eval">code</a></div>
+      <div class="lrow"><span class="lname">AD-IRT — 적응형 차원</span><span class="lmetric">ρ = 0.851, Evo-SOTA VLA 데이터 nested 5-fold CV</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/ad-irt">code</a></div>
+      <div class="lrow"><span class="lname">VLA 스코어링 결함 — Evo-SOTA.io, 183개 모델</span><span class="lmetric">Physical AI 평가를 위한 IRT 기반 랭킹</span><span class="lstatus prep">in preparation</span><a class="llink" href="https://github.com/testofschool/Awesome-Physical-AI">repo</a></div>
+      <div class="lrow"><span class="lname">Reverse-IRT × 암 약물 반응 (GDSC2)</span><span class="lmetric">측정값 242,036건 · 플랫폼 간 방향 일치 82% · 부정적 결과 정직 보고</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/reverse-irt-cancer">code</a></div>
+      <div class="lrow"><span class="lname">LLTM 평가</span><span class="lmetric">학습 데이터 50%로 미평가 항목 ρ = 0.87</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/lltm-evaluation">code</a></div>
+      <div class="lrow"><span class="lname">PCR — 심리측정 콘텐츠 라우팅</span><span class="lmetric">6.06 vs 3.67 / 10 (p = 0.004), GPU 비용 0</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/psychometric-content-routing">code</a></div>
+      <div class="lrow"><span class="lname">PCR2 — 콜드스타트 확장</span><span class="lmetric">ρ = 0.963 복원 · oracle 라우팅 품질의 96.9%</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/pcr-squared">code</a></div>
+      <div class="lrow"><span class="lname">FIRE — Fisher information 추천</span><span class="lmetric">MovieLens-1M 카탈로그 커버리지 1.8배, 명시적 점수 분해</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/fire-recommendation">code</a></div>
+      <div class="lrow"><span class="lname">IRT × 글로벌 금융</span><span class="lmetric">펀드 순위 최대 ±30계단 이동 · 50개 ETF, 217개월</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-global-finance">code</a></div>
+      <div class="lrow"><span class="lname">IRT × 사이버보안 (NVD)</span><span class="lmetric">CVE 55,020건 · 중간 범위 벤더 우선순위 최대 2.3배 향상</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-cybersecurity">code</a></div>
+
+      <h3>Build</h3>
+      <div class="lrow"><span class="lname">My Celeb</span><span class="lmetric">팬 수요 기반 1:1 영상통화 플랫폼 · 사전 출시 기능 17개</span><span class="lstatus">live</span><a class="llink" href="https://myceleb.vercel.app">site</a></div>
+      <div class="lrow"><span class="lname">월급 배터리</span><span class="lmetric">수입 → 30일 방전 곡선 시뮬레이터, 모바일 우선</span><span class="lstatus">live</span><a class="llink" href="https://salary-battery.vercel.app">site</a></div>
+      <div class="lrow"><span class="lname">SYNDI</span><span class="lmetric">멀티모델 대립 토론 엔진 · 생성 콘셉트 94개</span><span class="lstatus">local</span><span class="llink"></span></div>
+      <div class="lrow"><span class="lname">NovelForge</span><span class="lmetric">장편 소설 스튜디오 — 챕터 작업, QC, EPUB/PDF 내보내기</span><span class="lstatus">local</span><span class="llink"></span></div>
+
+      <h3>Operations record</h3>
+      <div class="lrow"><span class="lname">숏폼 채널 9개 (YouTube · Instagram)</span><span class="lmetric">3,300+개 영상 가공·발행 · 플랫폼 집계 175M+ 조회 · 최고 릴스 19.2M · AI 미사용 — 별도 스택</span><span class="lstatus">2023–2025</span><span class="llink"></span></div>
+      <div class="lrow"><span class="lname">에든버러 프린지 페스티벌 2023</span><span class="lmetric">회사 최초 해외 대표 · 통역 및 현장 운영</span><span class="lstatus">2023</span><span class="llink"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 ABOUT ============ -->
+  <section id="about" class="about">
+    <p class="eyebrow reveal"><span class="no">06</span>About</p>
+    <p class="reveal">제 작업은 프로덕션 현장의 실용적인 질문에서 시작했습니다: 왜 같은 입력이 툴, 모델, 벤치마크에 따라 다르게 작동하는가? 그 질문을 쫓다 프로듀서가 리서처가 됐습니다 — 하나의 측정 렌즈를, 같은 실패 패턴이 나타나는 곳마다 적용합니다.</p>
+    <p class="reveal">AI를 실행 레이어로 씁니다: 파이프라인, 프리프린트, 프로토타입, 제품. 문제와 감각과 완주율은 저의 것입니다.</p>
+    <div class="edu reveal">
+      <div class="ledger">
+        <h3>Education</h3>
+        <div class="lrow"><span class="lname">IBM × Red Hat AX Academy</span><span class="lmetric">960시간 집중 과정: LLM/RAG 워크플로우, watsonx, OpenShift, AWS (EKS)</span><span class="lstatus">2025.08 – 2026.02</span></div>
+        <div class="lrow"><span class="lname">Metalworks Institute — 캐나다 미시소가</span><span class="lmetric">Diploma, Electronic Music Production · Ontario PCC Act 2005 · IRCC DLI O110123589171</span><span class="lstatus">디플로마</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 COLOPHON ============ -->
+  <section id="colophon">
+    <p class="eyebrow reveal"><span class="no">07</span>Colophon — 이 사이트가 이렇게 생긴 이유</p>
+
+    <div class="colophon-list reveal">
+      <div class="crow"><span class="ck">Type</span><span class="cv">Pretendard Variable — 한 패밀리가 한글과 영문을 커버해, 다국어 사이트가 한 목소리로 말합니다. 숫자는 JetBrains Mono — 측정된 수치는 계측기 출력물처럼 읽혀야 합니다.</span></div>
+      <div class="crow"><span class="ck">Color</span><span class="cv">종이, 잉크, 그리고 단 하나의 네이비 — 이력서와 같은 #1C4587. 리크루터가 교차 확인할 모든 아티팩트가 하나의 브랜드입니다.</span></div>
+      <div class="crow"><span class="ck">Captions</span><span class="cv">모든 숫자가 측정 방법과 출처를 달고 있습니다. 단서는 숨기지 않고 그대로 표기합니다 — 제 연구 프로그램을 저 자신에게 적용한 것입니다.</span></div>
+      <div class="crow"><span class="ck">Motion</span><span class="cv">화면의 틀은 정지, 움직이는 건 작업뿐. 이 페이지의 유일한 애니메이션 그래픽은 논문의 결과 그 자체입니다. reduced-motion 설정을 존중합니다.</span></div>
+      <div class="crow"><span class="ck">No 3D, no stock</span><span class="cv">이 페이지의 모든 시각 요소는 작업 자체의 산출물입니다. 데이터 없는 장식은 테제와 모순됩니다.</span></div>
+      <div class="crow"><span class="ck">Engineering</span><span class="cv">수제 HTML/CSS/JS. 프레임워크·트래커·빌드 스텝 0 — 모든 주장이 서버 렌더 텍스트라 사람, 크롤러, AI 스크리너가 전부 읽을 수 있습니다. 폰트는 self-host.</span></div>
+      <div class="crow"><span class="ck">Exhibit zero</span><span class="cv">이 페이지 자체가 첫 번째 작업 샘플입니다: 문제(90초 안에 공정하게 평가받기), 진단, 실행, 그리고 지금 읽고 있는 결과.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 08 CONTACT ============ -->
+  <section id="contact" class="contact" style="border-bottom:none">
+    <p class="eyebrow reveal"><span class="no">08</span>Contact</p>
+    <p class="cta reveal">문제를 배정받기 전에 찾아내는 사람이 필요한 자리라면 — <a href="mailto:gangjeongmin23@gmail.com">메일 주세요.</a> 빠르게 답합니다.</p>
+    <div class="links reveal">
+      <a href="mailto:gangjeongmin23@gmail.com">gangjeongmin23@gmail.com</a>
+      <a href="https://github.com/testofschool">GitHub</a>
+      <a href="https://www.linkedin.com/in/kangjungmin">LinkedIn</a>
+      <a href="https://arxiv.org/abs/2605.11205">arXiv</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>KANG JUNG MIN · testofschool.github.io · 2026</span>
+  <span>수제 HTML/CSS/JS · 프레임워크·트래커·빌드 스텝 0 · 폰트 self-host</span>
+</footer>
+
+<script>
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var vh = window.innerHeight;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    revealEls.forEach(function(el){
+      if (el.getBoundingClientRect().top < vh) {
+        el.style.transition = 'none';
+        el.classList.add('in');
+      } else {
+        io.observe(el);
+      }
+    });
+  }
+
+  // chart draw-on-scroll: averaging collapses, IRT holds
+  function prepLine(el, delay){
+    if (el.classList.contains('line-avg')) {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 1.2s ease ' + delay + 's';
+    } else {
+      var len = el.getTotalLength();
+      el.style.strokeDasharray = String(len);
+      el.style.strokeDashoffset = String(len);
+      el.style.transition = 'stroke-dashoffset 1.6s ease ' + delay + 's';
+    }
+  }
+  var irt = document.getElementById('lineIRT');
+  var avg = document.getElementById('lineAVG');
+  if (irt && avg && !reduced && 'IntersectionObserver' in window) {
+    prepLine(irt, 0); prepLine(avg, .5);
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          irt.style.strokeDashoffset = '0';
+          avg.style.opacity = '1';
+          cio.disconnect();
+        }
+      });
+    }, {threshold:.4});
+    cio.observe(document.querySelector('.chartbox'));
+  }
+
+  // MV click-to-load embed (lite pattern): iframe loads only on click
+  var mv = document.getElementById('mvFrame');
+  if (mv) {
+    mv.addEventListener('click', function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      var box = document.createElement('div');
+      box.className = 'mv-frame';
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/JsT445NqkMk?autoplay=1&rel=0';
+      f.title = "AYOUNG — 'Waiting for the Sunshine' 공식 뮤직비디오";
+      f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      box.appendChild(f);
+      mv.replaceWith(box);
+      f.focus();
+    });
+  }
+</script>
+</body>
+</html>
