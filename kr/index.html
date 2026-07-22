@@ -9,6 +9,7 @@
 <link rel="alternate" hreflang="en" href="https://testofschool.github.io/">
 <link rel="alternate" hreflang="ko" href="https://testofschool.github.io/kr/">
 <link rel="alternate" hreflang="x-default" href="https://testofschool.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E1116'/%3E%3Cpath d='M17 14v36h8V35l16 15h11L33 31l18-17H40L25 28V14z' fill='%2322B573'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="강정민 — 포트폴리오">
 <meta property="og:description" content="문제를 찾는 사람. AI는 실행 레이어. 단독 저술 arXiv 프리프린트, 전국 방송을 탄 100% AI 뮤직비디오, 플랫폼 집계 175M+ 조회수.">
@@ -16,11 +17,13 @@
 <meta property="og:image" content="https://testofschool.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KANG JUNG MIN — Quality is a system you can inspect.">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="강정민 — 포트폴리오">
 <meta name="twitter:image" content="https://testofschool.github.io/assets/og.png">
+<meta name="twitter:image:alt" content="KANG JUNG MIN — Quality is a system you can inspect.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,8 +60,11 @@
   }
   :root{
     --paper:#F7F5EF;
-    --ink:#17150F;
-    --navy:#1C4587;
+    --surface:#FCFBF7;
+    --ink:#0E1116;
+    --accent:#22B573;
+    --accent-ink:#0F7547;
+    --accent-soft:rgba(34,181,115,.10);
     --graphite:#5B574B;
     --hairline:#E0DBCC;
     --maxw:1040px;
@@ -73,10 +79,10 @@
     -webkit-font-smoothing:antialiased;
     word-break:keep-all;
   }
-  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(28,69,135,.35); transition:border-color .15s}
-  a:hover{border-bottom-color:var(--navy)}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--navy); outline-offset:3px}
-  ::selection{background:var(--navy); color:var(--paper)}
+  a{color:var(--accent-ink); text-decoration:none; border-bottom:1px solid rgba(15,117,71,.38); transition:color .18s ease, border-color .18s ease}
+  a:hover{color:var(--accent-ink); border-bottom-color:currentColor}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent-ink); outline-offset:3px}
+  ::selection{background:var(--accent); color:var(--ink)}
 
   /* ---------- top bar ---------- */
   .topbar{
@@ -85,31 +91,39 @@
     padding:10px 24px;
     background:rgba(247,245,239,.92); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--hairline);
+    box-shadow:0 8px 28px rgba(14,17,22,.035);
     font-family:var(--mono); font-size:12px; letter-spacing:.02em;
   }
   .topbar .brand{font-weight:700; color:var(--ink); border:none}
   .topbar nav{display:flex; gap:16px; flex-wrap:wrap}
   .topbar nav a{color:var(--graphite); border:none}
-  .topbar nav a:hover{color:var(--navy)}
+  .topbar nav a{position:relative; transition:color .18s ease}
+  .topbar nav a:hover{color:var(--accent-ink)}
   .topbar .spacer{flex:1}
   .lang{display:flex; gap:10px; align-items:center}
   .lang a{color:var(--graphite); border:none; font-weight:400}
-  .lang a[aria-current]{color:var(--navy); font-weight:700}
-  .lang a:hover{color:var(--navy)}
+  .lang a[aria-current]{color:var(--accent-ink); font-weight:700}
+  .lang a:hover{color:var(--accent-ink)}
   .lang .sep{color:var(--hairline)}
 
   /* ---------- layout ---------- */
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
-  section{padding:88px 0 32px; border-bottom:1px solid var(--hairline)}
+  section{padding:104px 0 44px; border-bottom:1px solid var(--hairline); scroll-margin-top:42px}
   .eyebrow{
     font-family:var(--mono); font-size:12px; font-weight:400;
     letter-spacing:.14em; text-transform:uppercase; color:var(--graphite);
     margin-bottom:22px;
   }
-  .eyebrow .no{color:var(--navy); font-weight:700; margin-right:10px}
+  .eyebrow .no{color:var(--accent-ink); font-weight:700; margin-right:10px}
+  .eyebrow .jd-tag{
+    display:inline-block; margin-left:12px; padding:2px 7px 1px;
+    border:1px solid rgba(15,117,71,.35); border-radius:999px;
+    background:var(--accent-soft); color:var(--accent-ink); font-size:10.5px; font-weight:700;
+    letter-spacing:.08em; vertical-align:1px;
+  }
 
   /* ---------- hero ---------- */
-  .hero{padding:150px 0 64px}
+  .hero{padding:158px 0 78px}
   .hero .id{
     font-family:var(--mono); font-size:13px; letter-spacing:.1em;
     color:var(--graphite); text-transform:uppercase; margin-bottom:26px;
@@ -120,14 +134,14 @@
     font-size:clamp(42px, 7.2vw, 92px);
     max-width:12em;
   }
-  h1.thesis .proof-half{color:var(--navy)}
+  h1.thesis .proof-half{color:var(--accent-ink)}
   .hero .subline{
     margin-top:28px; max-width:32em; font-size:18px; color:var(--ink);
   }
   .hero .subline .quiet{color:var(--graphite)}
   .statgrid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:0;
-    margin-top:56px; border-top:1px solid var(--ink);
+    margin-top:62px; border-top:2px solid var(--ink);
   }
   .stat{padding:22px 24px 26px 0; border-right:1px solid var(--hairline)}
   .stat:last-child{border-right:none; padding-right:0}
@@ -146,30 +160,40 @@
   }
   .hero .whyhire{
     display:inline-block; margin-top:30px;
-    font-family:var(--mono); font-size:13px; font-weight:700; color:var(--navy);
+    font-family:var(--mono); font-size:13px; font-weight:700; color:var(--accent-ink);
     border:none;
   }
   .hero .whyhire:hover{text-decoration:underline}
 
   /* ---------- case grammar ---------- */
   .case-intro{max-width:40em; font-size:17px; color:var(--graphite); margin-bottom:8px}
-  .case{padding-top:56px}
+  .case{
+    margin-top:72px; padding:clamp(32px,4.8vw,52px);
+    background:var(--surface); border:1px solid var(--hairline); border-radius:16px;
+    box-shadow:0 18px 50px rgba(14,17,22,.035);
+  }
   .case h2{
     font-size:clamp(26px, 3.2vw, 40px); font-weight:800; letter-spacing:-.025em;
     line-height:1.25; max-width:18em;
   }
   .case .meta{
     font-family:var(--mono); font-size:12px; color:var(--graphite);
-    margin-top:12px; letter-spacing:.03em;
+    margin-top:14px; letter-spacing:.03em;
   }
-  .grammar{margin-top:36px; border-top:1px solid var(--hairline)}
+  .outcome{
+    margin-top:18px; padding:10px 0 10px 14px;
+    border-left:3px solid var(--accent); color:var(--accent-ink);
+    font-family:var(--mono); font-size:13px; font-weight:700; line-height:1.55;
+    letter-spacing:.01em;
+  }
+  .grammar{margin-top:32px; border-top:1px solid var(--hairline)}
   .row{
     display:grid; grid-template-columns:150px 1fr; gap:28px;
     padding:20px 0; border-bottom:1px solid var(--hairline);
   }
   .row .tag{
     font-family:var(--mono); font-size:11.5px; font-weight:700;
-    letter-spacing:.13em; text-transform:uppercase; color:var(--navy);
+    letter-spacing:.13em; text-transform:uppercase; color:var(--accent-ink);
     padding-top:4px;
   }
   .row .body{max-width:40em; font-size:16.5px}
@@ -184,17 +208,19 @@
   .rnum .label{font-size:14px; font-weight:600; margin-top:4px}
   .honesty{
     margin-top:18px; font-size:14.5px; color:var(--graphite);
-    padding-left:14px; border-left:2px solid var(--hairline);
+    padding:12px 14px; border-left:2px solid var(--accent);
+    background:rgba(34,181,115,.055);
     max-width:40em;
   }
   .prooflinks{display:flex; gap:14px; flex-wrap:wrap}
   .prooflinks a{
     font-family:var(--mono); font-size:12.5px; font-weight:400;
-    border:1px solid var(--navy); border-radius:2px; padding:8px 14px;
+    border:1px solid var(--accent-ink); border-radius:4px; padding:8px 14px;
+    transition:background .18s ease, color .18s ease, transform .18s ease;
   }
-  .prooflinks a:hover{background:var(--navy); color:var(--paper)}
+  .prooflinks a:hover{background:var(--accent-ink); color:var(--paper); transform:translateY(-1px)}
   .prooflinks .flat{border:none; padding:8px 0; color:var(--graphite)}
-  .prooflinks .flat:hover{background:none; color:var(--navy)}
+  .prooflinks .flat:hover{background:none; color:var(--accent-ink)}
 
   /* ---------- MV click-to-load embed ---------- */
   .mv-embed{width:100%; max-width:640px; margin-bottom:14px}
@@ -209,7 +235,7 @@
   .mv-play{
     position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
     width:64px; height:44px; border-radius:2px;
-    background:var(--navy); color:var(--paper);
+    background:var(--accent-ink); color:var(--paper);
     display:flex; align-items:center; justify-content:center;
     font-family:var(--mono); font-size:16px;
     transition:transform .15s;
@@ -220,16 +246,29 @@
   .chartbox{width:100%; margin-top:6px}
   .chartbox svg{width:100%; height:auto; display:block}
   .chart-cap{margin-top:8px}
-  .line-irt{stroke:var(--navy); stroke-width:3; fill:none}
+  .line-irt{stroke:var(--accent); stroke-width:3; fill:none}
   .line-avg{stroke:var(--graphite); stroke-width:2.25; stroke-dasharray:7 6; fill:none}
   .axis{stroke:var(--hairline); stroke-width:1}
   .chart-label{font-family:var(--mono); font-size:12px; fill:var(--graphite)}
-  .chart-label.navy{fill:var(--navy); font-weight:700}
+  .chart-label.accent{fill:var(--accent-ink); font-weight:700}
   .chart-label.ink{fill:var(--ink); font-weight:700}
 
   /* ---------- hiring case ---------- */
   .hiring-intro{max-width:40em; font-size:18px}
   .hiring-intro b{font-weight:700}
+  .reliability-proof{
+    display:grid; grid-template-columns:minmax(240px,1fr) 1.45fr; gap:42px;
+    margin-top:38px; padding:30px 32px; border-top:3px solid var(--accent);
+    border-radius:12px; background:var(--ink); color:var(--paper);
+    box-shadow:0 20px 54px rgba(14,17,22,.12);
+  }
+  .reliability-proof .rp-kicker{
+    color:var(--accent); font-family:var(--mono); font-size:11px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px;
+  }
+  .reliability-proof h3{font-size:21px; line-height:1.3; letter-spacing:-.015em}
+  .reliability-proof .rp-body{font-size:16px; line-height:1.65}
+  .reliability-proof .cap{color:#C9CEC9; margin-top:12px}
   .objection{
     display:grid; grid-template-columns:minmax(200px,.85fr) 1.6fr; gap:32px;
     padding:26px 0; border-bottom:1px solid var(--hairline);
@@ -239,7 +278,7 @@
   .objection .doubt{
     font-weight:800; font-size:20px; letter-spacing:-.015em; line-height:1.35;
   }
-  .objection .doubt .qmark{color:var(--navy)}
+  .objection .doubt .qmark{color:var(--accent-ink)}
   .objection .answer{font-size:16.5px; max-width:40em}
   .objection .answer .cap{margin-top:8px}
   .hiring-close{
@@ -262,7 +301,7 @@
   .lrow .lname{font-weight:600}
   .lrow .lmetric{font-family:var(--mono); font-size:12.5px; color:var(--graphite)}
   .lrow .lstatus{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--graphite)}
-  .lrow .lstatus.prep{color:var(--navy)}
+  .lrow .lstatus.prep{color:var(--accent-ink)}
   .lrow .llink{font-family:var(--mono); font-size:12px; justify-self:end}
 
   /* ---------- about / colophon / contact ---------- */
@@ -274,7 +313,7 @@
     display:grid; grid-template-columns:220px 1fr; gap:28px;
     padding:16px 0; border-bottom:1px solid var(--hairline); font-size:15.5px;
   }
-  .crow .ck{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); padding-top:3px}
+  .crow .ck{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-ink); padding-top:3px}
   .crow .cv{max-width:40em}
   .contact .cta{
     font-size:clamp(24px,3vw,36px); font-weight:800; letter-spacing:-.02em;
@@ -311,12 +350,15 @@
     .row{grid-template-columns:1fr; gap:8px}
     .resultgrid{grid-template-columns:1fr; gap:20px}
     .objection{grid-template-columns:1fr; gap:10px}
+    .reliability-proof{grid-template-columns:1fr; gap:18px; padding:24px 22px}
+    .case{margin-top:48px; padding:30px 22px; border-radius:12px}
     .lrow{grid-template-columns:1fr; gap:4px}
     .lrow .llink{justify-self:start}
     .crow{grid-template-columns:1fr; gap:6px}
     .edu .lrow{grid-template-columns:1fr}
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -380,8 +422,9 @@
 
     <!-- CASE 01 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 01</span>Origin — production</p>
+      <p class="eyebrow"><span class="no">CASE 01</span>Origin — production<span class="jd-tag">Nuanced evaluation</span></p>
       <h2>100% AI 생성 뮤직비디오, 전국 뉴스에.</h2>
+      <p class="outcome">100% AI 생성 · 약 1개월 · SBS 전국 방송</p>
       <p class="meta">(주)뉴텍 · 음악·엔터테인먼트, 파주 · Assistant Producer · 2023.05 – 2025.10 · 2025.03 공개</p>
       <div class="grammar">
         <div class="row">
@@ -428,8 +471,9 @@
 
     <!-- CASE 02 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 02</span>Method — research</p>
+      <p class="eyebrow"><span class="no">CASE 02</span>Method — research<span class="jd-tag">Enterprise-grade reliability</span></p>
       <h2>그 질문이 논문이 됐습니다: 평균은 언제 거짓말을 하는가?</h2>
+      <p class="outcome">전 150조건 ρ ≥ 0.993 · 단순 평균은 ρ = 0.24까지 하락</p>
       <p class="meta">Independent Researcher · 단독 저술 · arXiv:2605.11205 · 2026.05 – 현재</p>
       <div class="grammar">
         <div class="row">
@@ -458,19 +502,20 @@
                 <line class="axis" x1="46" y1="30" x2="52" y2="30"/>
                 <line class="axis" x1="46" y1="192" x2="52" y2="192"/>
                 <path id="lineIRT" class="line-irt" d="M52,32 C220,32 420,33 636,35"/>
-                <text class="chart-label navy" x="368" y="24">IRT — 전 150조건 ρ ≥ 0.993</text>
+                <text class="chart-label accent" x="368" y="24">IRT — 전 150조건 ρ ≥ 0.993</text>
                 <path id="lineAVG" class="line-avg" d="M52,34 C220,40 340,66 440,110 C520,146 580,176 636,192"/>
                 <text class="chart-label ink" x="380" y="176">단순 평균 — 최악 ρ = 0.24</text>
               </svg>
               <p class="cap chart-cap">헤드라인 결과의 도식 — 정확한 곡선과 150조건 전체는 논문에, arXiv:2605.11205</p>
             </div>
-            <p class="honesty">반응 역시 벤치마크 대비로 측정했습니다: 논문 공개 포스트의 LinkedIn 노출 5,184회 — 팔로워 1K 미만 계정 중앙값 225의 23배 (MagicPost, 56.6만 포스트 분석) — 첫 주 Threads 조회 17,000+. Playco 공동창업자 Teddy Cross(Sequoia 투자, $1B+ 게이밍 기업)가 Discord에서 논문에 직접 반응했습니다 — 스크린샷으로 검증 가능합니다.</p>
+            <p class="honesty">반응 역시 벤치마크 대비로 측정했습니다: 논문 공개 포스트의 LinkedIn 노출 5,184회 — 팔로워 1K 미만 계정 중앙값 225의 23배 (MagicPost, 56.6만 포스트 분석) — 첫 주 Threads 조회 17,000+. Playco 공동창업자 / Chief Product Officer Teddy Cross(Sequoia 투자, $1B 게이밍 유니콘)가 Discord에서 논문에 직접 반응했습니다 — 스크린샷으로 검증 가능합니다.</p>
           </div>
         </div>
         <div class="row">
           <div class="tag">Proof</div>
           <div class="body prooflinks">
             <a href="https://arxiv.org/abs/2605.11205">arXiv:2605.11205</a>
+            <a href="https://testofschool.github.io/evaluation-failure-scaling-law/">계산기 실행</a>
             <a href="https://github.com/testofschool/evaluation-failure-scaling-law">코드 — GitHub</a>
           </div>
         </div>
@@ -479,13 +524,14 @@
 
     <!-- CASE 03 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 03</span>Application — product</p>
-      <h2>2주에 라이브 앱 7개. 리텐션은 업계 평균의 2배.</h2>
+      <p class="eyebrow"><span class="no">CASE 03</span>Application — product<span class="jd-tag">Shipping daily value</span></p>
+      <h2>2주에 라이브 앱 7개. Day-30 리텐션 9.3%.</h2>
+      <p class="outcome">Day-1 37.0% · Day-30 9.3% · 앱 7개 / 2주</p>
       <p class="meta">토스 미니앱 · 1인 · AI 에이전트 코딩 (Claude Code + Claude Design) · 2026.05</p>
       <div class="grammar">
         <div class="row">
           <div class="tag">Problem</div>
-          <div class="body">캐주얼 미니앱은 Day 30이면 죽습니다 — 업계 D30 리텐션은 3–5% 수준. <span class="q">1인 AI 빌드 앱 대부분은 토이 단계를 못 벗어납니다.</span></div>
+          <div class="body">캐주얼 미니앱은 Day 30에도 사용자가 재방문하는지로 판가름 납니다. <span class="q">1인 AI 빌드 앱 대부분은 토이 단계를 못 벗어납니다.</span></div>
         </div>
         <div class="row">
           <div class="tag">Diagnosis</div>
@@ -499,8 +545,8 @@
           <div class="tag">Result</div>
           <div class="body">
             <div class="resultgrid">
-              <div class="rnum"><div class="big">50%</div><div class="label">Day-1 리텐션</div><div class="cap">쑥쑥정원 · 게임 평균 25–35%</div></div>
-              <div class="rnum"><div class="big">8–10%</div><div class="label">Day-30 리텐션</div><div class="cap">쑥쑥정원 · 캐주얼 게임 평균의 2배 — Business of Apps 2026, UXCam 2026</div></div>
+              <div class="rnum"><div class="big">37.0%</div><div class="label">Day-1 리텐션</div><div class="cap">마음동물 · Toss 분석</div></div>
+              <div class="rnum"><div class="big">9.3%</div><div class="label">Day-30 리텐션</div><div class="cap">마음동물 · 캐주얼 게임 평균의 약 2배</div></div>
               <div class="rnum"><div class="big">7개/2주</div><div class="label">1인 출시</div><div class="cap">코드 타임스탬프 검증 가능</div></div>
             </div>
             <p class="honesty">유저 수는 작습니다 — 플랫폼 내 유기적 유입만, 획득 비용 ₩0. 주장은 리텐션 설계이고, 의도적으로 그렇게 프레이밍했습니다.</p>
@@ -521,6 +567,17 @@
   <section id="hiring">
     <p class="eyebrow reveal"><span class="no">04</span>The hiring case</p>
     <p class="hiring-intro reveal">채용은 <b>리스크 결정</b>입니다. 이 페이지의 일은 면접을 건너뛰는 쪽이 더 위험하게 느껴지게 만드는 것. 그래서 채용 담당자가 마땅히 제기할 반론을 먼저 꺼내고 — 영수증으로 답합니다.</p>
+
+    <div class="reliability-proof reveal" aria-label="엔터프라이즈급 신뢰성 증거">
+      <div>
+        <p class="rp-kicker">Enterprise-grade reliability</p>
+        <h3>AX Talent War 2026 / Samil PwC — Trusted CEO Agent Challenge</h3>
+      </div>
+      <div class="rp-body">
+        <p>₩30B 의사결정 시나리오를 위해 재판정 에이전트를 만들었습니다. 모든 계산과 판정은 결정론적 코드가 맡고, LLM은 입력 구조화와 결과 설명만 담당해 hallucination을 설계 단계에서 차단했습니다.</p>
+        <p class="cap">Finalist · 결정론 판정 · 사람이 읽을 수 있는 설명</p>
+      </div>
+    </div>
 
     <div class="reveal">
       <div class="objection">
@@ -609,7 +666,7 @@
 
     <div class="colophon-list reveal">
       <div class="crow"><span class="ck">Type</span><span class="cv">Pretendard Variable — 한 패밀리가 한글과 영문을 커버해, 다국어 사이트가 한 목소리로 말합니다. 숫자는 JetBrains Mono — 측정된 수치는 계측기 출력물처럼 읽혀야 합니다.</span></div>
-      <div class="crow"><span class="ck">Color</span><span class="cv">종이, 잉크, 그리고 단 하나의 네이비 — 이력서와 같은 #1C4587. 리크루터가 교차 확인할 모든 아티팩트가 하나의 브랜드입니다.</span></div>
+      <div class="crow"><span class="ck">Color</span><span class="cv">종이, 잉크, 그리고 하나의 Fieldguide 그린. 정확한 #22B573은 선과 어두운 면에, 종이 위 텍스트에는 AA 대비를 확보한 #0F7547을 씁니다.</span></div>
       <div class="crow"><span class="ck">Captions</span><span class="cv">모든 숫자가 측정 방법과 출처를 달고 있습니다. 단서는 숨기지 않고 그대로 표기합니다 — 제 연구 프로그램을 저 자신에게 적용한 것입니다.</span></div>
       <div class="crow"><span class="ck">Motion</span><span class="cv">화면의 틀은 정지, 움직이는 건 작업뿐. 이 페이지의 유일한 애니메이션 그래픽은 논문의 결과 그 자체입니다. reduced-motion 설정을 존중합니다.</span></div>
       <div class="crow"><span class="ck">No 3D, no stock</span><span class="cv">이 페이지의 모든 시각 요소는 작업 자체의 산출물입니다. 데이터 없는 장식은 테제와 모순됩니다.</span></div>
@@ -642,23 +699,37 @@
 
   // scroll reveal
   var revealEls = document.querySelectorAll('.reveal');
-  if (reduced || !('IntersectionObserver' in window)) {
+  function showAllReveals(){
     revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+  if (reduced || !('IntersectionObserver' in window)) {
+    showAllReveals();
   } else {
-    var vh = window.innerHeight;
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    var observerResponded = false;
+    var revealGuard = window.setTimeout(function(){
+      if (!observerResponded) showAllReveals();
+    }, 1600);
+    try {
+      var vh = window.innerHeight;
+      var io = new IntersectionObserver(function(entries){
+        observerResponded = true;
+        window.clearTimeout(revealGuard);
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:.12});
+      revealEls.forEach(function(el){
+        if (el.getBoundingClientRect().top < vh) {
+          el.style.transition = 'none';
+          el.classList.add('in');
+        } else {
+          io.observe(el);
+        }
       });
-    }, {threshold:.12});
-    revealEls.forEach(function(el){
-      if (el.getBoundingClientRect().top < vh) {
-        el.style.transition = 'none';
-        el.classList.add('in');
-      } else {
-        io.observe(el);
-      }
-    });
+    } catch (err) {
+      window.clearTimeout(revealGuard);
+      showAllReveals();
+    }
   }
 
   // chart draw-on-scroll: averaging collapses, IRT holds

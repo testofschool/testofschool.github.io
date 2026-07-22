@@ -18,11 +18,11 @@ sitemap.xml
 robots.txt
 ```
 
-**프로토타입 대비 승인된 델타:** 근거 레이어 제거 · graphite `#6E6A5E`→`#5B574B` · 폰트 CDN→self-host · MV 링크 카드→click-to-load 임베드 · EN|KR 토글 + JSON-LD/OG/canonical · 초기 뷰포트 reveal 즉시 표시(LCP 보호) · JetBrains Mono 500 웨이트 제거(500→400, 2웨이트 셋 유지) · "13 months"→"14 months"(페이지 내 날짜 2025.03→2026.05와 산술 일치하도록 교정).
+**프로토타입 대비 승인된 델타:** 근거 레이어 제거 · Fieldguide 그린 단일 계열 적용 · CASE 결과 헤드라인과 신뢰성 증거 블록 추가 · graphite `#6E6A5E`→`#5B574B` · 폰트 CDN→self-host · MV 링크 카드→click-to-load 임베드 · EN|KR 토글 + JSON-LD/OG/canonical · no-JS/observer-failure reveal 폴백 · JetBrains Mono 500 웨이트 제거(500→400, 2웨이트 셋 유지) · "13 months"→"14 months"(페이지 내 날짜 2025.03→2026.05와 산술 일치하도록 교정).
 
 **폰트 전략 (성능 측정으로 결정):** 처음엔 스펙대로 dynamic subset(92청크)을 연결했으나, EN/KR 페이지가 한글 글리프 때문에 청크 10–19개(230–490KB)를 당겨 Lighthouse 모바일 Perf가 78–85에 묶였다. 두 페이지의 전체 글리프 유니온(529자)+안전 범위(ASCII·Latin-1·자모·기호)를 하나의 woff2로 서브셋하고 가변 웨이트 축을 실사용 범위(400–800)로 잘라 **95KB 단일 요청**으로 바꿈 → Perf 100/100. dynamic subset 파일들은 예비로 유지.
 
-- 소스 오브 트루스: 콘텐츠(수치·문구) = `master_cv_blueprint_20260702.md` / 형태 = `portfolio_design_decisions_20260702.md` / 시각 기준 = `portfolio_prototype_v1.html`
+- 소스 오브 트루스: 콘텐츠(수치·고유명사) = `자동화/jobsync/master/master_cv.md` / 형태·시각 기준 = `portfolio_reference/portfolio_design_spec.md` + `reference_board.html`
 - **외부 요청은 단 1건**: Case 01의 MV 포스터 `i.ytimg.com/vi/JsT445NqkMk/maxresdefault.jpg` (lazy-load, below-fold). 유튜브 iframe(`youtube-nocookie.com`)은 클릭 시에만 로드되는 click-to-load 패턴이라 초기 로드에 외부 스크립트 0.
 
 ## 디자인 토큰
@@ -30,16 +30,17 @@ robots.txt
 | 토큰 | 값 | 용도 | 대비 (on paper) |
 |------|-----|------|------|
 | `--paper` | `#F7F5EF` | 배경 | — |
-| `--ink` | `#17150F` | 본문 | 16.74:1 |
-| `--navy` | `#1C4587` | 유일 악센트 — CV와 동일 값 | 8.56:1 |
+| `--ink` | `#0E1116` | 본문·어두운 증거 블록 | 17.35:1 |
+| `--accent` | `#22B573` | Fieldguide 그린 — 선·어두운 면 위 신호 | 7.14:1 on ink |
+| `--accent-ink` | `#0F7547` | 같은 그린 계열의 접근성 텍스트 값 | 5.27:1 |
 | `--graphite` | `#5B574B` | 캡션·보조 | 6.62:1 |
 | `--hairline` | `#E0DBCC` | 구분선 | — |
 
 폰트: Pretendard Variable (본문 400 / 디스플레이 800, ls −0.035em) + JetBrains Mono (숫자·캡션·메타·태그·원장).
 크기: 히어로 `clamp(42px,7.2vw,92px)` / 케이스 제목 `clamp(26px,3.2vw,40px)` / 본문 17px lh1.65 / 캡션 11.5–13px.
 폭: 컨테이너 1040px / EN 본문 66ch / **KR 본문 40em (CJK 별도 기준 — EN 값 복사 금지)**.
-여백: 히어로 상단 150px / 섹션 88px / 스탯 그리드 22–26px.
-애니메이션 2종만: EFSL 차트 draw-on-scroll(IRT 1.6s + 평균 0.5s 지연 페이드, 1회) + 섹션 reveal(550ms). `prefers-reduced-motion` 시 전부 비활성. reveal은 `.js` 클래스 게이팅이라 JS 꺼도 콘텐츠 전부 보임.
+여백: 히어로 상단 158px / 섹션 104px / 스탯 그리드 22–26px.
+애니메이션 2종만: EFSL 차트 draw-on-scroll(IRT 1.6s + 평균 0.5s 지연 페이드, 1회) + 섹션 reveal(550ms). `prefers-reduced-motion` 시 전부 비활성. reveal은 `.js` 게이팅 + `<noscript>` + observer 미응답 가드로 정적/오류 상황에서도 콘텐츠가 노출됨.
 
 ## 수정·재생성 방법
 
@@ -55,7 +56,7 @@ robots.txt
   python3 -m fontTools.varLib.instancer sub.woff2 wght=400:800 \
     -o assets/fonts/pretendard/PretendardVariable.site-subset.woff2
   ```
-- OG 이미지 재생성: 토큰 동일한 1200×630 HTML을 headless Chrome으로 `--window-size=1200,630 --screenshot` 캡처.
+- OG 이미지 재생성: `imagine_promptpack_v3.md`의 OG 카드 프롬프트를 이미지 생성 도구에 그대로 전달하고, 최종 산출물을 정확히 1200×630 PNG로 리샘플한 뒤 `assets/og.png`에 배치.
 
 ## 검증 명령 모음 (10항목)
 

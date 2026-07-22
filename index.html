@@ -9,6 +9,7 @@
 <link rel="alternate" hreflang="en" href="https://testofschool.github.io/">
 <link rel="alternate" hreflang="ko" href="https://testofschool.github.io/kr/">
 <link rel="alternate" hreflang="x-default" href="https://testofschool.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E1116'/%3E%3Cpath d='M17 14v36h8V35l16 15h11L33 31l18-17H40L25 28V14z' fill='%2322B573'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="KANG JUNG MIN — Portfolio">
 <meta property="og:description" content="Problem-finder. AI as the execution layer. Sole-authored arXiv preprint, 100% AI music video on national broadcast, 175M+ platform-reported views.">
@@ -16,11 +17,13 @@
 <meta property="og:image" content="https://testofschool.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KANG JUNG MIN — Quality is a system you can inspect.">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KANG JUNG MIN — Portfolio">
 <meta name="twitter:image" content="https://testofschool.github.io/assets/og.png">
+<meta name="twitter:image:alt" content="KANG JUNG MIN — Quality is a system you can inspect.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,8 +60,11 @@
   }
   :root{
     --paper:#F7F5EF;
-    --ink:#17150F;
-    --navy:#1C4587;
+    --surface:#FCFBF7;
+    --ink:#0E1116;
+    --accent:#22B573;
+    --accent-ink:#0F7547;
+    --accent-soft:rgba(34,181,115,.10);
     --graphite:#5B574B;
     --hairline:#E0DBCC;
     --maxw:1040px;
@@ -72,10 +78,10 @@
     font-family:var(--sans); font-size:17px; line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(28,69,135,.35); transition:border-color .15s}
-  a:hover{border-bottom-color:var(--navy)}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--navy); outline-offset:3px}
-  ::selection{background:var(--navy); color:var(--paper)}
+  a{color:var(--accent-ink); text-decoration:none; border-bottom:1px solid rgba(15,117,71,.38); transition:color .18s ease, border-color .18s ease}
+  a:hover{color:var(--accent-ink); border-bottom-color:currentColor}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent-ink); outline-offset:3px}
+  ::selection{background:var(--accent); color:var(--ink)}
 
   /* ---------- top bar ---------- */
   .topbar{
@@ -84,31 +90,39 @@
     padding:10px 24px;
     background:rgba(247,245,239,.92); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--hairline);
+    box-shadow:0 8px 28px rgba(14,17,22,.035);
     font-family:var(--mono); font-size:12px; letter-spacing:.02em;
   }
   .topbar .brand{font-weight:700; color:var(--ink); border:none}
   .topbar nav{display:flex; gap:16px; flex-wrap:wrap}
   .topbar nav a{color:var(--graphite); border:none}
-  .topbar nav a:hover{color:var(--navy)}
+  .topbar nav a{position:relative; transition:color .18s ease}
+  .topbar nav a:hover{color:var(--accent-ink)}
   .topbar .spacer{flex:1}
   .lang{display:flex; gap:10px; align-items:center}
   .lang a{color:var(--graphite); border:none; font-weight:400}
-  .lang a[aria-current]{color:var(--navy); font-weight:700}
-  .lang a:hover{color:var(--navy)}
+  .lang a[aria-current]{color:var(--accent-ink); font-weight:700}
+  .lang a:hover{color:var(--accent-ink)}
   .lang .sep{color:var(--hairline)}
 
   /* ---------- layout ---------- */
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
-  section{padding:88px 0 32px; border-bottom:1px solid var(--hairline)}
+  section{padding:104px 0 44px; border-bottom:1px solid var(--hairline); scroll-margin-top:42px}
   .eyebrow{
     font-family:var(--mono); font-size:12px; font-weight:400;
     letter-spacing:.14em; text-transform:uppercase; color:var(--graphite);
     margin-bottom:22px;
   }
-  .eyebrow .no{color:var(--navy); font-weight:700; margin-right:10px}
+  .eyebrow .no{color:var(--accent-ink); font-weight:700; margin-right:10px}
+  .eyebrow .jd-tag{
+    display:inline-block; margin-left:12px; padding:2px 7px 1px;
+    border:1px solid rgba(15,117,71,.35); border-radius:999px;
+    background:var(--accent-soft); color:var(--accent-ink); font-size:10.5px; font-weight:700;
+    letter-spacing:.08em; vertical-align:1px;
+  }
 
   /* ---------- hero ---------- */
-  .hero{padding:150px 0 64px}
+  .hero{padding:158px 0 78px}
   .hero .id{
     font-family:var(--mono); font-size:13px; letter-spacing:.1em;
     color:var(--graphite); text-transform:uppercase; margin-bottom:26px;
@@ -119,14 +133,14 @@
     font-size:clamp(42px, 7.2vw, 92px);
     max-width:16ch;
   }
-  h1.thesis .proof-half{color:var(--navy)}
+  h1.thesis .proof-half{color:var(--accent-ink)}
   .hero .subline{
     margin-top:28px; max-width:58ch; font-size:18px; color:var(--ink);
   }
   .hero .subline .quiet{color:var(--graphite)}
   .statgrid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:0;
-    margin-top:56px; border-top:1px solid var(--ink);
+    margin-top:62px; border-top:2px solid var(--ink);
   }
   .stat{padding:22px 24px 26px 0; border-right:1px solid var(--hairline)}
   .stat:last-child{border-right:none; padding-right:0}
@@ -145,30 +159,40 @@
   }
   .hero .whyhire{
     display:inline-block; margin-top:30px;
-    font-family:var(--mono); font-size:13px; font-weight:700; color:var(--navy);
+    font-family:var(--mono); font-size:13px; font-weight:700; color:var(--accent-ink);
     border:none;
   }
   .hero .whyhire:hover{text-decoration:underline}
 
   /* ---------- case grammar ---------- */
-  .case-intro{max-width:62ch; font-size:17px; color:var(--graphite); margin-bottom:8px}
-  .case{padding-top:56px}
+  .case-intro{max-width:60ch; font-size:17px; color:var(--graphite); margin-bottom:8px}
+  .case{
+    margin-top:72px; padding:clamp(32px,4.8vw,52px);
+    background:var(--surface); border:1px solid var(--hairline); border-radius:16px;
+    box-shadow:0 18px 50px rgba(14,17,22,.035);
+  }
   .case h2{
     font-size:clamp(26px, 3.2vw, 40px); font-weight:800; letter-spacing:-.025em;
     line-height:1.12; max-width:22ch;
   }
   .case .meta{
     font-family:var(--mono); font-size:12px; color:var(--graphite);
-    margin-top:12px; letter-spacing:.03em;
+    margin-top:14px; letter-spacing:.03em;
   }
-  .grammar{margin-top:36px; border-top:1px solid var(--hairline)}
+  .outcome{
+    margin-top:18px; padding:10px 0 10px 14px;
+    border-left:3px solid var(--accent); color:var(--accent-ink);
+    font-family:var(--mono); font-size:13px; font-weight:700; line-height:1.55;
+    letter-spacing:.01em;
+  }
+  .grammar{margin-top:32px; border-top:1px solid var(--hairline)}
   .row{
     display:grid; grid-template-columns:150px 1fr; gap:28px;
     padding:20px 0; border-bottom:1px solid var(--hairline);
   }
   .row .tag{
     font-family:var(--mono); font-size:11.5px; font-weight:700;
-    letter-spacing:.13em; text-transform:uppercase; color:var(--navy);
+    letter-spacing:.13em; text-transform:uppercase; color:var(--accent-ink);
     padding-top:4px;
   }
   .row .body{max-width:66ch; font-size:16.5px}
@@ -183,16 +207,18 @@
   .rnum .label{font-size:14px; font-weight:600; margin-top:4px}
   .honesty{
     margin-top:18px; font-size:14.5px; color:var(--graphite);
-    padding-left:14px; border-left:2px solid var(--hairline);
+    padding:12px 14px; border-left:2px solid var(--accent);
+    background:rgba(34,181,115,.055);
   }
   .prooflinks{display:flex; gap:14px; flex-wrap:wrap}
   .prooflinks a{
     font-family:var(--mono); font-size:12.5px; font-weight:400;
-    border:1px solid var(--navy); border-radius:2px; padding:8px 14px;
+    border:1px solid var(--accent-ink); border-radius:4px; padding:8px 14px;
+    transition:background .18s ease, color .18s ease, transform .18s ease;
   }
-  .prooflinks a:hover{background:var(--navy); color:var(--paper)}
+  .prooflinks a:hover{background:var(--accent-ink); color:var(--paper); transform:translateY(-1px)}
   .prooflinks .flat{border:none; padding:8px 0; color:var(--graphite)}
-  .prooflinks .flat:hover{background:none; color:var(--navy)}
+  .prooflinks .flat:hover{background:none; color:var(--accent-ink)}
 
   /* ---------- MV click-to-load embed ---------- */
   .mv-embed{width:100%; max-width:640px; margin-bottom:14px}
@@ -207,7 +233,7 @@
   .mv-play{
     position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
     width:64px; height:44px; border-radius:2px;
-    background:var(--navy); color:var(--paper);
+    background:var(--accent-ink); color:var(--paper);
     display:flex; align-items:center; justify-content:center;
     font-family:var(--mono); font-size:16px;
     transition:transform .15s;
@@ -218,16 +244,29 @@
   .chartbox{width:100%; margin-top:6px}
   .chartbox svg{width:100%; height:auto; display:block}
   .chart-cap{margin-top:8px}
-  .line-irt{stroke:var(--navy); stroke-width:3; fill:none}
+  .line-irt{stroke:var(--accent); stroke-width:3; fill:none}
   .line-avg{stroke:var(--graphite); stroke-width:2.25; stroke-dasharray:7 6; fill:none}
   .axis{stroke:var(--hairline); stroke-width:1}
   .chart-label{font-family:var(--mono); font-size:12px; fill:var(--graphite)}
-  .chart-label.navy{fill:var(--navy); font-weight:700}
+  .chart-label.accent{fill:var(--accent-ink); font-weight:700}
   .chart-label.ink{fill:var(--ink); font-weight:700}
 
   /* ---------- hiring case ---------- */
   .hiring-intro{max-width:64ch; font-size:18px}
   .hiring-intro b{font-weight:700}
+  .reliability-proof{
+    display:grid; grid-template-columns:minmax(240px,1fr) 1.45fr; gap:42px;
+    margin-top:38px; padding:30px 32px; border-top:3px solid var(--accent);
+    border-radius:12px; background:var(--ink); color:var(--paper);
+    box-shadow:0 20px 54px rgba(14,17,22,.12);
+  }
+  .reliability-proof .rp-kicker{
+    color:var(--accent); font-family:var(--mono); font-size:11px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px;
+  }
+  .reliability-proof h3{font-size:21px; line-height:1.3; letter-spacing:-.015em}
+  .reliability-proof .rp-body{font-size:16px; line-height:1.65}
+  .reliability-proof .cap{color:#C9CEC9; margin-top:12px}
   .objection{
     display:grid; grid-template-columns:minmax(200px,.85fr) 1.6fr; gap:32px;
     padding:26px 0; border-bottom:1px solid var(--hairline);
@@ -237,7 +276,7 @@
   .objection .doubt{
     font-weight:800; font-size:20px; letter-spacing:-.015em; line-height:1.3;
   }
-  .objection .doubt .qmark{color:var(--navy)}
+  .objection .doubt .qmark{color:var(--accent-ink)}
   .objection .answer{font-size:16.5px; max-width:64ch}
   .objection .answer .cap{margin-top:8px}
   .hiring-close{
@@ -260,7 +299,7 @@
   .lrow .lname{font-weight:600}
   .lrow .lmetric{font-family:var(--mono); font-size:12.5px; color:var(--graphite)}
   .lrow .lstatus{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--graphite)}
-  .lrow .lstatus.prep{color:var(--navy)}
+  .lrow .lstatus.prep{color:var(--accent-ink)}
   .lrow .llink{font-family:var(--mono); font-size:12px; justify-self:end}
 
   /* ---------- about / colophon / contact ---------- */
@@ -272,7 +311,7 @@
     display:grid; grid-template-columns:220px 1fr; gap:28px;
     padding:16px 0; border-bottom:1px solid var(--hairline); font-size:15.5px;
   }
-  .crow .ck{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); padding-top:3px}
+  .crow .ck{font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-ink); padding-top:3px}
   .crow .cv{max-width:66ch}
   .contact .cta{
     font-size:clamp(24px,3vw,36px); font-weight:800; letter-spacing:-.02em;
@@ -309,12 +348,15 @@
     .row{grid-template-columns:1fr; gap:8px}
     .resultgrid{grid-template-columns:1fr; gap:20px}
     .objection{grid-template-columns:1fr; gap:10px}
+    .reliability-proof{grid-template-columns:1fr; gap:18px; padding:24px 22px}
+    .case{margin-top:48px; padding:30px 22px; border-radius:12px}
     .lrow{grid-template-columns:1fr; gap:4px}
     .lrow .llink{justify-self:start}
     .crow{grid-template-columns:1fr; gap:6px}
     .edu .lrow{grid-template-columns:1fr}
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -378,8 +420,9 @@
 
     <!-- CASE 01 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 01</span>Origin — production</p>
+      <p class="eyebrow"><span class="no">CASE 01</span>Origin — production<span class="jd-tag">Nuanced evaluation</span></p>
       <h2>A 100% AI-generated music video, on national news.</h2>
+      <p class="outcome">100% AI-generated · ~1 month · SBS national broadcast</p>
       <p class="meta">NewTech (㈜뉴텍) · Music &amp; Entertainment, Paju · Assistant Producer · May 2023 – Oct 2025 · shipped Mar 2025</p>
       <div class="grammar">
         <div class="row">
@@ -426,8 +469,9 @@
 
     <!-- CASE 02 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 02</span>Method — research</p>
+      <p class="eyebrow"><span class="no">CASE 02</span>Method — research<span class="jd-tag">Enterprise-grade reliability</span></p>
       <h2>The question became a paper: when does averaging lie?</h2>
+      <p class="outcome">ρ ≥ 0.993 across all 150 conditions · simple averaging falls to ρ = 0.24</p>
       <p class="meta">Independent Researcher · sole-authored · arXiv:2605.11205 · May 2026 – present</p>
       <div class="grammar">
         <div class="row">
@@ -456,19 +500,20 @@
                 <line class="axis" x1="46" y1="30" x2="52" y2="30"/>
                 <line class="axis" x1="46" y1="192" x2="52" y2="192"/>
                 <path id="lineIRT" class="line-irt" d="M52,32 C220,32 420,33 636,35"/>
-                <text class="chart-label navy" x="392" y="24">IRT — ρ ≥ 0.993, all 150 conditions</text>
+                <text class="chart-label accent" x="392" y="24">IRT — ρ ≥ 0.993, all 150 conditions</text>
                 <path id="lineAVG" class="line-avg" d="M52,34 C220,40 340,66 440,110 C520,146 580,176 636,192"/>
                 <text class="chart-label ink" x="380" y="176">simple averaging — ρ = 0.24 worst case</text>
               </svg>
               <p class="cap chart-cap">schematic of the headline result — exact curves and all 150 conditions in the paper, arXiv:2605.11205</p>
             </div>
-            <p class="honesty">Traction, measured against benchmarks: 5,184 LinkedIn impressions on the announcement — 23× the 225 median for sub-1K-follower accounts (MagicPost, 566K posts analyzed) — plus 17,000+ Threads views in week one. Playco co-founder Teddy Cross (Sequoia-backed, $1B+ gaming company) engaged with the paper directly on Discord — screenshot-verified.</p>
+            <p class="honesty">Traction, measured against benchmarks: 5,184 LinkedIn impressions on the announcement — 23× the 225 median for sub-1K-follower accounts (MagicPost, 566K posts analyzed) — plus 17,000+ Threads views in week one. Playco Cofounder &amp; Chief Product Officer Teddy Cross (Sequoia-backed $1B gaming unicorn) engaged with the paper directly on Discord — screenshot-verified.</p>
           </div>
         </div>
         <div class="row">
           <div class="tag">Proof</div>
           <div class="body prooflinks">
             <a href="https://arxiv.org/abs/2605.11205">arXiv:2605.11205</a>
+            <a href="https://testofschool.github.io/evaluation-failure-scaling-law/">Try the calculator</a>
             <a href="https://github.com/testofschool/evaluation-failure-scaling-law">Code — GitHub</a>
           </div>
         </div>
@@ -477,13 +522,14 @@
 
     <!-- CASE 03 -->
     <article class="case reveal">
-      <p class="eyebrow"><span class="no">CASE 03</span>Application — product</p>
-      <h2>7 live apps in 2 weeks. Retention beat the industry, ×2.</h2>
+      <p class="eyebrow"><span class="no">CASE 03</span>Application — product<span class="jd-tag">Shipping daily value</span></p>
+      <h2>7 live apps in 2 weeks. Day-30 retention reached 9.3%.</h2>
+      <p class="outcome">Day-1 37.0% · Day-30 9.3% · 7 apps / 2 weeks</p>
       <p class="meta">Toss mini-apps · solo · AI-agent coding (Claude Code + Claude Design) · May 2026</p>
       <div class="grammar">
         <div class="row">
           <div class="tag">Problem</div>
-          <div class="body">Casual mini-apps die by Day 30 — industry D30 retention sits around 3–5%. <span class="q">Most solo AI-built apps never get past toy status.</span></div>
+          <div class="body">Casual mini-apps are judged by whether users still return after Day 30. <span class="q">Most solo AI-built apps never get past toy status.</span></div>
         </div>
         <div class="row">
           <div class="tag">Diagnosis</div>
@@ -497,8 +543,8 @@
           <div class="tag">Result</div>
           <div class="body">
             <div class="resultgrid">
-              <div class="rnum"><div class="big">50%</div><div class="label">Day-1 retention</div><div class="cap">쑥쑥정원 · game-industry avg 25–35%</div></div>
-              <div class="rnum"><div class="big">8–10%</div><div class="label">Day-30 retention</div><div class="cap">쑥쑥정원 · 2× the casual-game average — Business of Apps 2026, UXCam 2026</div></div>
+              <div class="rnum"><div class="big">37.0%</div><div class="label">Day-1 retention</div><div class="cap">마음동물 · Toss analytics</div></div>
+              <div class="rnum"><div class="big">9.3%</div><div class="label">Day-30 retention</div><div class="cap">마음동물 · ~2× the casual-game average</div></div>
               <div class="rnum"><div class="big">7 / 2wk</div><div class="label">apps shipped, solo</div><div class="cap">code timestamps verifiable</div></div>
             </div>
             <p class="honesty">User counts are small — organic in-platform traffic only, acquisition spend ₩0. The claim is the retention design, and it's framed that way on purpose.</p>
@@ -519,6 +565,17 @@
   <section id="hiring">
     <p class="eyebrow reveal"><span class="no">04</span>The hiring case</p>
     <p class="hiring-intro reveal">Hiring is a <b>risk decision.</b> This page's job is to make skipping the interview feel like the riskier option. So here are the objections a hiring manager should raise — answered with receipts.</p>
+
+    <div class="reliability-proof reveal" aria-label="Enterprise-grade reliability proof">
+      <div>
+        <p class="rp-kicker">Enterprise-grade reliability</p>
+        <h3>AX Talent War 2026 / Samil PwC — Trusted CEO Agent Challenge</h3>
+      </div>
+      <div class="rp-body">
+        <p>For a ₩30B decision scenario, I built a decision-boundary re-judgment agent where deterministic code owns every computation and judgment. The LLM only structures inputs and explains outputs, blocking hallucination by design.</p>
+        <p class="cap">Finalist · deterministic adjudication · human-readable rationale</p>
+      </div>
+    </div>
 
     <div class="reveal">
       <div class="objection">
@@ -607,7 +664,7 @@
 
     <div class="colophon-list reveal">
       <div class="crow"><span class="ck">Type</span><span class="cv">Pretendard Variable — one family covers Korean and English, so a trilingual site speaks in one voice. Numbers are set in JetBrains Mono: measured figures should read like instrument output.</span></div>
-      <div class="crow"><span class="ck">Color</span><span class="cv">Paper, ink, and a single navy — the same #1C4587 as my résumé. One brand across every artifact a recruiter will cross-check.</span></div>
+      <div class="crow"><span class="ck">Color</span><span class="cv">Paper, ink, and one Fieldguide-green accent. The exact #22B573 signal is reserved for rules and dark surfaces; an accessible #0F7547 shade carries text on paper.</span></div>
       <div class="crow"><span class="ck">Captions</span><span class="cv">Every number carries its measurement method and source. Qualifiers are printed, not hidden — that's the whole research program, applied to myself.</span></div>
       <div class="crow"><span class="ck">Motion</span><span class="cv">The chrome stays still; only the work moves. The single animated graphic on this page is the paper's own result. Reduced-motion preferences are respected.</span></div>
       <div class="crow"><span class="ck">No 3D, no stock</span><span class="cv">Every visual here is an artifact of the work itself. Decoration without data would contradict the thesis.</span></div>
@@ -640,23 +697,37 @@
 
   // scroll reveal
   var revealEls = document.querySelectorAll('.reveal');
-  if (reduced || !('IntersectionObserver' in window)) {
+  function showAllReveals(){
     revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+  if (reduced || !('IntersectionObserver' in window)) {
+    showAllReveals();
   } else {
-    var vh = window.innerHeight;
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    var observerResponded = false;
+    var revealGuard = window.setTimeout(function(){
+      if (!observerResponded) showAllReveals();
+    }, 1600);
+    try {
+      var vh = window.innerHeight;
+      var io = new IntersectionObserver(function(entries){
+        observerResponded = true;
+        window.clearTimeout(revealGuard);
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:.12});
+      revealEls.forEach(function(el){
+        if (el.getBoundingClientRect().top < vh) {
+          el.style.transition = 'none';
+          el.classList.add('in');
+        } else {
+          io.observe(el);
+        }
       });
-    }, {threshold:.12});
-    revealEls.forEach(function(el){
-      if (el.getBoundingClientRect().top < vh) {
-        el.style.transition = 'none';
-        el.classList.add('in');
-      } else {
-        io.observe(el);
-      }
-    });
+    } catch (err) {
+      window.clearTimeout(revealGuard);
+      showAllReveals();
+    }
   }
 
   // chart draw-on-scroll: averaging collapses, IRT holds
