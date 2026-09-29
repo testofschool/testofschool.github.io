@@ -395,8 +395,8 @@
         <div class="cap">플랫폼 집계 기준 · 회사 소유 채널 9개 · 3,300+개 영상 가공·발행 · AI 미사용 — 별도 스택</div>
       </div>
       <div class="stat">
-        <div class="big">ρ ≥ 0.993</div>
-        <div class="label">전 150조건 IRT 순위 안정성</div>
+        <div class="big">최소 ρ 0.993</div>
+        <div class="label">IRT 순위 안정성 — 150조건 합성 그리드(편향 결측)의 조건별 평균 최솟값</div>
         <div class="cap">단독 저술 arXiv 프리프린트 2605.11205 · 단순 평균은 최악 조건에서 ρ = 0.24까지 붕괴</div>
       </div>
       <div class="stat">
@@ -473,7 +473,7 @@
     <article class="case reveal">
       <p class="eyebrow"><span class="no">CASE 02</span>Method — research<span class="jd-tag">Enterprise-grade reliability</span></p>
       <h2>그 질문이 논문이 됐습니다: 평균은 언제 거짓말을 하는가?</h2>
-      <p class="outcome">전 150조건 ρ ≥ 0.993 · 단순 평균은 ρ = 0.24까지 하락</p>
+      <p class="outcome">150조건 합성 그리드, 편향 결측: IRT 조건별 평균 ρ ≥ 0.993(반올림) · 단순 평균은 ρ = 0.24까지 하락</p>
       <p class="meta">Independent Researcher · 단독 저술 · arXiv:2605.11205 · 2026.05 – 현재</p>
       <div class="grammar">
         <div class="row">
@@ -482,17 +482,17 @@
         </div>
         <div class="row">
           <div class="tag">Diagnosis</div>
-          <div class="body">심리측정학은 인간 시험에서 이 문제를 수십 년 전에 풀었습니다. IRT를 LLM 평가에 적용한 선행연구는 존재합니다 — 제 기여는 체계적인 <b>"언제, 왜"</b>입니다: 4개 도메인 × 150조건 그리드로 평균이 무너지고 IRT가 버티는 지점을 정확히 지도화했습니다.</div>
+          <div class="body">심리측정학은 인간 시험에서 이 문제를 수십 년 전에 풀었습니다. IRT를 LLM 평가에 적용한 선행연구는 존재합니다 — 제 기여는 체계적인 <b>"언제, 왜"</b>입니다: 4개 도메인(NLP·임상시험·자율주행 안전·사이버보안)에 맞춘 시뮬레이션과, 이와 별도로 희소도 × 난이도 격차를 훑는 150조건 합성 그리드로 평균이 무너지고 IRT가 버티는 지점을 지도화했습니다.</div>
         </div>
         <div class="row">
           <div class="tag">Execution</div>
-          <div class="body">단독 저술, 무소속, GPU 없이 — IRT는 통계 모델이라 전체 그리드가 노트북에서 약 60초 만에 돕니다(NumPy/SciPy). arXiv endorsement는 교수 5명에게 보낸 콜드메일로 확보했고, 1명이 응답했습니다.</div>
+          <div class="body">단독 저술, 무소속, GPU 없이 — IRT는 통계 모델이라 150조건 그리드 전체가 M1 Max 노트북에서 약 80초 만에 돕니다(NumPy/SciPy). arXiv endorsement는 교수 5명에게 보낸 콜드메일로 확보했고, 1명이 응답했습니다.</div>
         </div>
         <div class="row">
           <div class="tag">Result</div>
           <div class="body">
             <div class="chartbox">
-              <svg viewBox="0 0 660 290" role="img" aria-label="도식: 단순 평균은 ρ 0.24까지 붕괴하지만 IRT는 전 150조건에서 ρ 0.993 이상 유지">
+              <svg viewBox="0 0 660 290" role="img" aria-label="도식: 150조건 합성 그리드·편향 결측에서 단순 평균은 ρ 0.24까지 붕괴하지만 IRT 조건별 평균은 ρ 0.993 이상(반올림) 유지">
                 <line class="axis" x1="52" y1="20" x2="52" y2="240"/>
                 <line class="axis" x1="52" y1="240" x2="640" y2="240"/>
                 <text class="chart-label" x="52" y="262">완만한 조건</text>
@@ -502,7 +502,7 @@
                 <line class="axis" x1="46" y1="30" x2="52" y2="30"/>
                 <line class="axis" x1="46" y1="192" x2="52" y2="192"/>
                 <path id="lineIRT" class="line-irt" d="M52,32 C220,32 420,33 636,35"/>
-                <text class="chart-label accent" x="368" y="24">IRT — 전 150조건 ρ ≥ 0.993</text>
+                <text class="chart-label accent" x="368" y="24">IRT — 조건별 평균 최소 ρ 0.993</text>
                 <path id="lineAVG" class="line-avg" d="M52,34 C220,40 340,66 440,110 C520,146 580,176 636,192"/>
                 <text class="chart-label ink" x="380" y="176">단순 평균 — 최악 ρ = 0.24</text>
               </svg>
@@ -622,7 +622,7 @@
 
     <div class="ledger reveal">
       <h3>Research</h3>
-      <div class="lrow"><span class="lname">EFSL — 평가 실패의 스케일링 법칙</span><span class="lmetric">전 150조건 ρ ≥ 0.993 vs 평균 최악 0.24</span><span class="lstatus">preprint</span><a class="llink" href="https://arxiv.org/abs/2605.11205">arXiv</a></div>
+      <div class="lrow"><span class="lname">EFSL — 평가 실패의 스케일링 법칙</span><span class="lmetric">IRT 조건별 평균 최소 ρ 0.993 vs 평균 최악 0.24 (합성 그리드, 편향 결측)</span><span class="lstatus">preprint</span><a class="llink" href="https://arxiv.org/abs/2605.11205">arXiv</a></div>
       <div class="lrow"><span class="lname">Isomorph-Eval</span><span class="lmetric">공개 전 자체 variant 파이프라인에서 41% 오류율 적발</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/isomorph-eval">code</a></div>
       <div class="lrow"><span class="lname">AD-IRT — 적응형 차원</span><span class="lmetric">ρ = 0.851, Evo-SOTA VLA 데이터 nested 5-fold CV</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/ad-irt">code</a></div>
       <div class="lrow"><span class="lname">VLA 스코어링 결함 — Evo-SOTA.io, 183개 모델</span><span class="lmetric">Physical AI 평가를 위한 IRT 기반 랭킹</span><span class="lstatus prep">in preparation</span><a class="llink" href="https://github.com/testofschool/Awesome-Physical-AI">repo</a></div>
@@ -630,7 +630,7 @@
       <div class="lrow"><span class="lname">LLTM 평가</span><span class="lmetric">학습 데이터 50%로 미평가 항목 ρ = 0.87</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/lltm-evaluation">code</a></div>
       <div class="lrow"><span class="lname">PCR — 심리측정 콘텐츠 라우팅</span><span class="lmetric">6.06 vs 3.67 / 10 (p = 0.004), GPU 비용 0</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/psychometric-content-routing">code</a></div>
       <div class="lrow"><span class="lname">PCR2 — 콜드스타트 확장</span><span class="lmetric">ρ = 0.963 복원 · oracle 라우팅 품질의 96.9%</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/pcr-squared">code</a></div>
-      <div class="lrow"><span class="lname">FIRE — Fisher information 추천</span><span class="lmetric">MovieLens-1M 카탈로그 커버리지 1.8배, 명시적 점수 분해</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/fire-recommendation">code</a></div>
+      <div class="lrow"><span class="lname">FIRE — Fisher information 추천</span><span class="lmetric">MovieLens-1M 카탈로그 커버리지 IRT 대비 1.8배, 명시적 점수 분해</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/fire-recommendation">code</a></div>
       <div class="lrow"><span class="lname">IRT × 글로벌 금융</span><span class="lmetric">펀드 순위 최대 ±30계단 이동 · 50개 ETF, 217개월</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-global-finance">code</a></div>
       <div class="lrow"><span class="lname">IRT × 사이버보안 (NVD)</span><span class="lmetric">CVE 55,020건 · 중간 범위 벤더 우선순위 최대 2.3배 향상</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-cybersecurity">code</a></div>
 
