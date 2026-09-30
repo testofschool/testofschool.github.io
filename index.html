@@ -393,8 +393,8 @@
         <div class="cap">platform-reported · 9 company-owned channels · 3,300+ videos adapted &amp; published · AI not used — separate stack</div>
       </div>
       <div class="stat">
-        <div class="big">ρ ≥ 0.993</div>
-        <div class="label">IRT rank stability across all 150 conditions</div>
+        <div class="big">min ρ 0.993</div>
+        <div class="label">IRT rank stability, lowest cell mean over a 150-condition synthetic grid (biased missingness)</div>
         <div class="cap">sole-authored arXiv preprint 2605.11205 · simple averaging collapses to ρ = 0.24 in the worst case</div>
       </div>
       <div class="stat">
@@ -471,7 +471,7 @@
     <article class="case reveal">
       <p class="eyebrow"><span class="no">CASE 02</span>Method — research<span class="jd-tag">Enterprise-grade reliability</span></p>
       <h2>The question became a paper: when does averaging lie?</h2>
-      <p class="outcome">ρ ≥ 0.993 across all 150 conditions · simple averaging falls to ρ = 0.24</p>
+      <p class="outcome">Synthetic 150-condition grid, biased missingness: IRT cell means stay at ρ ≥ 0.993 (rounded) · simple averaging falls to ρ = 0.24</p>
       <p class="meta">Independent Researcher · sole-authored · arXiv:2605.11205 · May 2026 – present</p>
       <div class="grammar">
         <div class="row">
@@ -480,17 +480,17 @@
         </div>
         <div class="row">
           <div class="tag">Diagnosis</div>
-          <div class="body">Psychometrics solved this for human testing decades ago. Prior art applying IRT to LLM evaluation exists — my contribution is the systematic <b>when and why</b>: a 150-condition grid across four domains that maps exactly where averaging fails and IRT holds.</div>
+          <div class="body">Psychometrics solved this for human testing decades ago. Prior art applying IRT to LLM evaluation exists — my contribution is the systematic <b>when and why</b>: simulations calibrated to four domains (NLP, clinical trials, AV safety, cybersecurity), plus a separate 150-condition synthetic grid over sparsity × difficulty gap that maps where averaging fails and IRT holds.</div>
         </div>
         <div class="row">
           <div class="tag">Execution</div>
-          <div class="body">Sole-authored, no affiliation, no GPU — IRT is a statistical model; the full grid runs in about 60 seconds on a laptop (NumPy/SciPy). arXiv endorsement secured by cold-emailing 5 professors; 1 replied.</div>
+          <div class="body">Sole-authored, no affiliation, no GPU — IRT is a statistical model; the full 150-condition grid runs in about 80 seconds on an M1 Max laptop (NumPy/SciPy). arXiv endorsement secured by cold-emailing 5 professors; 1 replied.</div>
         </div>
         <div class="row">
           <div class="tag">Result</div>
           <div class="body">
             <div class="chartbox">
-              <svg viewBox="0 0 660 290" role="img" aria-label="Schematic: simple averaging collapses to rho 0.24 while IRT holds at rho 0.993 or above across 150 conditions">
+              <svg viewBox="0 0 660 290" role="img" aria-label="Schematic: on a 150-condition synthetic grid with biased missingness, simple averaging collapses to rho 0.24 while IRT cell means stay at rho 0.993 or above (rounded)">
                 <line class="axis" x1="52" y1="20" x2="52" y2="240"/>
                 <line class="axis" x1="52" y1="240" x2="640" y2="240"/>
                 <text class="chart-label" x="52" y="262">benign conditions</text>
@@ -500,7 +500,7 @@
                 <line class="axis" x1="46" y1="30" x2="52" y2="30"/>
                 <line class="axis" x1="46" y1="192" x2="52" y2="192"/>
                 <path id="lineIRT" class="line-irt" d="M52,32 C220,32 420,33 636,35"/>
-                <text class="chart-label accent" x="392" y="24">IRT — ρ ≥ 0.993, all 150 conditions</text>
+                <text class="chart-label accent" x="392" y="24">IRT — min cell-mean ρ 0.993</text>
                 <path id="lineAVG" class="line-avg" d="M52,34 C220,40 340,66 440,110 C520,146 580,176 636,192"/>
                 <text class="chart-label ink" x="380" y="176">simple averaging — ρ = 0.24 worst case</text>
               </svg>
@@ -620,7 +620,7 @@
 
     <div class="ledger reveal">
       <h3>Research</h3>
-      <div class="lrow"><span class="lname">EFSL — The Scaling Law of Evaluation Failure</span><span class="lmetric">ρ ≥ 0.993 across 150 conditions vs 0.24 averaging worst case</span><span class="lstatus">preprint</span><a class="llink" href="https://arxiv.org/abs/2605.11205">arXiv</a></div>
+      <div class="lrow"><span class="lname">EFSL — The Scaling Law of Evaluation Failure</span><span class="lmetric">min IRT cell-mean ρ 0.993 vs 0.24 averaging worst case (synthetic grid, biased missingness)</span><span class="lstatus">preprint</span><a class="llink" href="https://arxiv.org/abs/2605.11205">arXiv</a></div>
       <div class="lrow"><span class="lname">Isomorph-Eval</span><span class="lmetric">caught a 41% error rate in my own variant pipeline pre-publish</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/isomorph-eval">code</a></div>
       <div class="lrow"><span class="lname">AD-IRT — adaptive dimensionality</span><span class="lmetric">ρ = 0.851, nested 5-fold CV on Evo-SOTA VLA data</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/ad-irt">code</a></div>
       <div class="lrow"><span class="lname">VLA scoring flaws — Evo-SOTA.io, 183 models</span><span class="lmetric">IRT-based ranking for physical AI evaluation</span><span class="lstatus prep">in preparation</span><a class="llink" href="https://github.com/testofschool/Awesome-Physical-AI">repo</a></div>
@@ -628,7 +628,7 @@
       <div class="lrow"><span class="lname">LLTM evaluation</span><span class="lmetric">ρ = 0.87 on unseen items at 50% training data</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/lltm-evaluation">code</a></div>
       <div class="lrow"><span class="lname">PCR — psychometric content routing</span><span class="lmetric">6.06 vs 3.67 / 10 (p = 0.004), zero GPU cost</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/psychometric-content-routing">code</a></div>
       <div class="lrow"><span class="lname">PCR2 — cold-start extension</span><span class="lmetric">ρ = 0.963 recovered · 96.9% of oracle routing quality</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/pcr-squared">code</a></div>
-      <div class="lrow"><span class="lname">FIRE — Fisher information recommendation</span><span class="lmetric">1.8× catalog coverage on MovieLens-1M, explicit score decomposition</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/fire-recommendation">code</a></div>
+      <div class="lrow"><span class="lname">FIRE — Fisher information recommendation</span><span class="lmetric">1.8× the catalog coverage of IRT on MovieLens-1M, explicit score decomposition</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/fire-recommendation">code</a></div>
       <div class="lrow"><span class="lname">IRT × global finance</span><span class="lmetric">fund ranks shift up to ±30 positions · 50 ETFs, 217 months</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-global-finance">code</a></div>
       <div class="lrow"><span class="lname">IRT × cybersecurity (NVD)</span><span class="lmetric">55,020 CVEs · up to 2.3× prioritization lift for mid-range vendors</span><span class="lstatus">open-source</span><a class="llink" href="https://github.com/testofschool/irt-cybersecurity">code</a></div>
 
