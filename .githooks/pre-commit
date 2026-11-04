@@ -1,0 +1,3 @@
+#!/bin/sh
+# Validate the exact staged portfolio before committing.
+exec python3 scripts/check_portfolio.py --staged

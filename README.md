@@ -1,90 +1,43 @@
 # testofschool.github.io
 
-KANG JUNG MIN 채용 포트폴리오. 수제 HTML/CSS/vanilla JS — 프레임워크·빌드 스텝·트래커 0.
+강정민 채용 포트폴리오. 삼일PwC 검토자가 연구와 작업을 확인하고 면접 연락으로 이어갈 수 있도록 구성한 정적 사이트다. 외부 런타임, 프레임워크, 트래커가 없다.
 
-## 구조
+## 구성
 
-```
-index.html          EN (정본)
-kr/index.html       KR
-assets/
-  fonts/pretendard/
-    PretendardVariable.site-subset.woff2   ← 페이지가 실제 로드하는 파일 (95KB, 아래 설명)
-    pretendardvariable-dynamic-subset.css  ← 예비 (dynamic subset 92청크, 미사용)
-    woff2-dynamic-subset/                  ← 예비 (텍스트 대개편 시 폴백용)
-  fonts/jetbrains-mono/       JetBrains Mono 400/700 woff2 (라틴+기호 서브셋, 각 ~30KB)
-  og.png                      OG 이미지 1200×630
-sitemap.xml
-robots.txt
-```
+- `kr/index.html`: 한국어 정본
+- `index.html`: 같은 구조의 영어판
+- `assets/proof/`: 실제 삼일 본선 명찰, 원본 논문, 공식 채택 기록, 실제 연구 데이터의 시각화, MV 장면
+- `assets/icons/`: Lucide/Feather 탐색 아이콘과 GitHub 식별 아이콘. 라이선스 동봉.
+- `assets/fonts/`: 자체 호스팅 Pretendard 가변 폰트와 JetBrains Mono 서브셋
+- `assets/og.png`: 1200×630 공유 이미지
 
-**프로토타입 대비 승인된 델타:** 근거 레이어 제거 · Fieldguide 그린 단일 계열 적용 · CASE 결과 헤드라인과 신뢰성 증거 블록 추가 · graphite `#6E6A5E`→`#5B574B` · 폰트 CDN→self-host · MV 링크 카드→click-to-load 임베드 · EN|KR 토글 + JSON-LD/OG/canonical · no-JS/observer-failure reveal 폴백 · JetBrains Mono 500 웨이트 제거(500→400, 2웨이트 셋 유지) · "13 months"→"14 months"(페이지 내 날짜 2025.03→2026.05와 산술 일치하도록 교정).
+## 읽는 순서
 
-**폰트 전략 (성능 측정으로 결정):** 처음엔 스펙대로 dynamic subset(92청크)을 연결했으나, EN/KR 페이지가 한글 글리프 때문에 청크 10–19개(230–490KB)를 당겨 Lighthouse 모바일 Perf가 78–85에 묶였다. 두 페이지의 전체 글리프 유니온(529자)+안전 범위(ASCII·Latin-1·자모·기호)를 하나의 woff2로 서브셋하고 가변 웨이트 축을 실사용 범위(400–800)로 잘라 **95KB 단일 요청**으로 바꿈 → Perf 100/100. dynamic subset 파일들은 예비로 유지.
+2026-11-04 사용자 승인 방향: “좋다, 이 방향성으로 정리해줘”. 기준은 `portfolio-contract.json`과 `AGENTS.md`에 보존한다. 내용·순서 수정 후 `python3 scripts/check_portfolio.py`로 구조 회귀를 확인하고, 배치 변경은 실제 화면도 확인한다.
 
-- 소스 오브 트루스: 콘텐츠(수치·고유명사) = `자동화/jobsync/master/master_cv.md` / 형태·시각 기준 = `portfolio_reference/portfolio_design_spec.md` + `reference_board.html`
-- **외부 요청은 단 1건**: Case 01의 MV 포스터 `i.ytimg.com/vi/JsT445NqkMk/maxresdefault.jpg` (lazy-load, below-fold). 유튜브 iframe(`youtube-nocookie.com`)은 클릭 시에만 로드되는 click-to-load 패턴이라 초기 로드에 외부 스크립트 0.
+이름과 아이콘 연락처 → **삼일PwC 트랙 본선 진출 + 실제 명찰을 크게 보여주는 첫 화면** → NeurIPS 2026 워크숍 포스터 채택 연구 → 작은 MV 썸네일 → 접힌 이력 → 면접 연락.
 
-## 디자인 토큰
+삼일 본선 경험은 검토자와 공감대를 만드는 메인이다. 본선 진출 사실에서 문구를 멈추며 후속 구현, 피드백, 내부 테스트 수치는 페이지에 노출하지 않는다. 연구는 두 번째 근거로 배치하고, MV는 작은 보조 항목으로 둔다. 실제 명찰 사진은 카메라 방향을 정규화하고 비율을 유지해 웹용으로 인코딩했으며 EXIF/GPS 메타데이터는 포함하지 않는다. 생성 이미지나 재제작 명찰이 아니다. 원문 논문과 공식 채택 기록은 바로 열 수 있으며, 연구 요약은 네이티브 `<details>`로 펼친다. 모든 연락/언어/원문 링크와 펼치기는 JavaScript 없이 동작한다.
 
-| 토큰 | 값 | 용도 | 대비 (on paper) |
-|------|-----|------|------|
-| `--paper` | `#F7F5EF` | 배경 | — |
-| `--ink` | `#0E1116` | 본문·어두운 증거 블록 | 17.35:1 |
-| `--accent` | `#22B573` | Fieldguide 그린 — 선·어두운 면 위 신호 | 7.14:1 on ink |
-| `--accent-ink` | `#0F7547` | 같은 그린 계열의 접근성 텍스트 값 | 5.27:1 |
-| `--graphite` | `#5B574B` | 캡션·보조 | 6.62:1 |
-| `--hairline` | `#E0DBCC` | 구분선 | — |
+## 근거와 해석
 
-폰트: Pretendard Variable (본문 400 / 디스플레이 800, ls −0.035em) + JetBrains Mono (숫자·캡션·메타·태그·원장).
-크기: 히어로 `clamp(42px,7.2vw,92px)` / 케이스 제목 `clamp(26px,3.2vw,40px)` / 본문 17px lh1.65 / 캡션 11.5–13px.
-폭: 컨테이너 1040px / EN 본문 66ch / **KR 본문 40em (CJK 별도 기준 — EN 값 복사 금지)**.
-여백: 히어로 상단 158px / 섹션 104px / 스탯 그리드 22–26px.
-애니메이션 2종만: EFSL 차트 draw-on-scroll(IRT 1.6s + 평균 0.5s 지연 페이드, 1회) + 섹션 reveal(550ms). `prefers-reduced-motion` 시 전부 비활성. reveal은 `.js` 게이팅 + `<noscript>` + observer 미응답 가드로 정적/오류 상황에서도 콘텐츠가 노출됨.
+대표 논문은 **Ranking Under Biased Missingness: When Model Rank Is Not Identifiable from Sparse Leaderboards**, 단독 저자 Jung Min Kang. NeurIPS 2026 워크숍 **Can We Trust AI Evaluation?** 포스터 채택이다. 메인 컨퍼런스 논문 채택이나 수상으로 표현하지 않는다. [공식 채택 기록](https://neurips.cc/virtual/2026/178314).
 
-## 수정·재생성 방법
+큰 그림은 원본 분석 데이터에서 다시 그린 순위 비교다. 같은 정규화된 관측 점수 행렬의 단순 평균 순위와 2PL 잠재특성 추정 순위를 비교한다. 162개 모델 중 ProGAL-VLA가 99위와 22위로 77칸 차이를 보였다. 이는 집계 모형에 따른 불일치이며 정확도 개선·정답 순위 회복을 의미하지 않는다. 논문에 실린 원본 그림으로 표시하지 않는다. 별도 EFSL 논문 결과를 이 채택 연구와 합치지 않는다.
 
-- 페이지는 파일당 완결 (HTML 안에 CSS/JS 인라인). EN 수정 시 KR도 같은 위치를 수정할 것 — 구조·클래스는 1:1 동일.
-- 새 수치·문구는 blueprint에 먼저 추가 → 두 페이지에 반영 → 아래 검증 재실행.
-- **텍스트를 수정하면 폰트 서브셋 재생성 필수** (서브셋에 없는 새 글자는 시스템 폰트로 폴백됨):
-  ```bash
-  # 1. 두 HTML의 텍스트를 union.txt로 추출 (태그·style·script 제거 후 유니크 문자)
-  # 2. Pretendard 원본(릴리즈 zip의 web/variable/woff2/PretendardVariable.woff2)에서:
-  python3 -m fontTools.subset PretendardVariable.woff2 --flavor=woff2 --text-file=union.txt \
-    --unicodes="U+0020-007E,U+00A0-00FF,U+2013-2026,U+00D7,U+00B1,U+03C1,U+2264-2265,U+20A9,U+25B6,U+2190-2199,U+3131-314E" \
-    --layout-features='*' --name-IDs='*' --output-file=sub.woff2
-  python3 -m fontTools.varLib.instancer sub.woff2 wght=400:800 \
-    -o assets/fonts/pretendard/PretendardVariable.site-subset.woff2
-  ```
-- OG 이미지 재생성: `imagine_promptpack_v3.md`의 OG 카드 프롬프트를 이미지 생성 도구에 그대로 전달하고, 최종 산출물을 정확히 1200×630 PNG로 리샘플한 뒤 `assets/og.png`에 배치.
+뮤직비디오는 2인 팀 공동 제작 이력이며 [실제 영상](https://www.youtube.com/watch?v=JsT445NqkMk)과 [SBS 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859)로 연결한다. 트랙션을 추정하지 않는다. Upstage MABC 결선과 언어 이력은 기본 닫힘 상태다.
 
-## 검증 명령 모음 (10항목)
+## 유지보수와 검증
 
-```bash
-# 1. 금지 문자열 (전부 0이어야 함)
-for p in "Felix Kang" "under review" "first-authored" "Korea's first" "n8n" "Dify" \
-         "PyTorch" "Python" "조연출" "6 papers" "최초의 AI 뮤직비디오" \
-         "AI Content Producer" "AI Content Creator"; do
-  echo "$p: $(grep -rc "$p" index.html kr/index.html | awk -F: '{s+=$NF} END {print s}')"
-done
+- 한국어/영어의 구조, 링크, 공개 범위를 함께 수정한다.
+- 새 문자를 넣으면 두 페이지의 실제 문자로 Pretendard 서브셋을 다시 생성하고 cmap을 대조한다. JetBrains Mono는 언어 전환 EN/KR에만 사용한다.
+- 375px·390px 모바일과 데스크톱에서 가로 넘침, 그림 가독성, 아이콘 이름, 접기/펼치기, 언어 전환을 확인한다.
+- 연락은 `mailto:gangjeongmin23@gmail.com`이며 전송을 자동 실행하지 않는다.
+- Lighthouse 모바일 성능·접근성 목표는 각각95이상, LCP는1.5초 미만이다. 요구 조건과 실제 측정 결과는 구분한다.
+- 실제 면접 검토, 체류, 선정 효과는 관찰 전까지 미측정이다. 미리보기의 기술 검증으로 대체하지 않는다.
 
-# 2. 무-JS 판독 (텍스트 추출 후 주장 순서 확인)
-npx -y html-to-text < index.html | head -100
+## 배포
 
-# 3–5. Lighthouse (모바일 Perf/A11y ≥ 95, LCP < 1.5s)
-python3 -m http.server 8080 &
-npx -y lighthouse http://localhost:8080 --form-factor=mobile --screenEmulation.mobile \
-  --only-categories=performance,accessibility --view
+사용자가 완성본 비교를 보고 배포를 승인한 뒤에만 push한다. 배포 후 원격 커밋과 실제 `/kr/`·`/` 응답을 다시 읽어 반영을 확인한다. 저장·로컬 검증·push·라이브 반영은 별도 상태로 기록한다.
 
-# 6. 외부 링크 전수 curl
-grep -oE 'href="https?://[^"]+"' index.html kr/index.html | sort -u
-
-# 7. reduced-motion — DevTools Rendering 패널에서 에뮬레이션
-# 8. 375px 뷰포트 — 가로 스크롤 없어야 함
-# 9. 수치 대조 — blueprint와 diff
-# 10. JSON-LD — validator.schema.org
-```
-
-## 배포 후
-
-`cv_generate.js`의 `PORTFOLIO_EN`/`PORTFOLIO_KR` 변수를 사이트 URL(`https://testofschool.github.io/`, `https://testofschool.github.io/kr/`)로 교체 후 `node cv_generate.js` 재실행 — 이력서의 [Coming Soon]/[준비 중]이 실제 URL로 바뀝니다.
+로컬 커밋 전 검사는 `.githooks/pre-commit`에서 스테이징된 파일을 대상으로 실행한다. 새 clone에서는 `git config --local core.hooksPath .githooks`로 연결한다. 현재 저장소에는 연결되어 있다. 명시적인 새 방향 승인이 있으면 기준과 검사를 함께 갱신한다.
