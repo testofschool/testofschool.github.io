@@ -84,11 +84,17 @@ def check(root):
                     issues.append(f'{rel}: actual MABC output missing')
                 else:
                     ancestor=output.parent
+                    disclosure=None
                     while ancestor is not None:
-                        if ancestor.tag=='details' or 'hidden' in ancestor.attrs:
-                            issues.append(f'{rel}: actual MABC output must be visible without expanding a disclosure')
+                        if ancestor.tag=='details':
+                            disclosure=ancestor
                             break
                         ancestor=ancestor.parent
+                    collapsed=contract['execution_visibility_revision']['actual_service_output'].startswith('collapsed')
+                    if collapsed and (disclosure is None or 'open' in disclosure.attrs):
+                        issues.append(f'{rel}: actual MABC output must be collapsed by default')
+                    elif not collapsed and disclosure is not None:
+                        issues.append(f'{rel}: actual MABC output must be visible without expanding a disclosure')
         if contract.get('version', 1) >= 4:
             activities={n.attrs.get('data-activity'):n for n in nodes if n.tag=='li' and n.attrs.get('data-activity')}
             expected=contract['ongoing_activity_revision']['entries']

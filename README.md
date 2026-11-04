@@ -25,7 +25,7 @@
 
 큰 그림은 원본 분석 데이터에서 다시 그린 순위 비교다. 같은 정규화된 관측 점수 행렬의 단순 평균 순위와 2PL 잠재특성 추정 순위를 비교한다. 162개 모델 중 ProGAL-VLA가 99위와 22위로 77칸 차이를 보였다. 이는 집계 모형에 따른 불일치이며 정확도 개선·정답 순위 회복을 의미하지 않는다. 논문에 실린 원본 그림으로 표시하지 않는다. 별도 EFSL 논문 결과를 이 채택 연구와 합치지 않는다.
 
-뮤직비디오는 2인 팀 공동 제작 이력이며 [실제 영상](https://www.youtube.com/watch?v=JsT445NqkMk)과 [SBS 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859)로 연결한다. 트랙션을 추정하지 않는다. MABC 결선 증서는 크게 노출하고, 실제 서비스 결과 원본은 클릭 없이 바로 보여준다. 언어 이력은 기본 닫힘 상태다.
+뮤직비디오는 2인 팀 공동 제작 이력이며 [실제 영상](https://www.youtube.com/watch?v=JsT445NqkMk)과 [SBS 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859)로 연결한다. 트랙션을 추정하지 않는다. MABC 결선 증서는 크게 노출하고, 실제 서비스 결과 원본은 기본 닫힘 상태에서 펼쳐 볼 수 있다. 언어 이력은 기본 닫힘 상태다.
 
 ## 유지보수와 검증
 
@@ -58,4 +58,4 @@ The entry set comes from inspected correspondence and current local originals. P
 
 The live version-3 page was audited from first view to contact, including disclosures, against the current official Samil FDE selection context. Findings are analysis, not observed judge feedback. The Samil, research, community, minor MV and contact units remain byte-for-byte retained in KR/EN. MABC retains the same text and assets, with the service output moved outside its disclosure. The user explicitly authorized version 4 publication after making the existing MABC service output always visible, with no extra wording and the Samil main preserved. Saved, tested, published and live-verified status are tracked separately.
 
-The MABC output is a permanent figure outside `<details>`. Its existing label, sample caption and original image are retained without adding page text. This visibility-only correction applies equally to KR/EN.
+Version 5 restores the MABC output to a default-closed `<details>` at the user’s explicit correction and immediate-deployment request. The label, sample caption, original image and all other content remain unchanged in KR/EN.

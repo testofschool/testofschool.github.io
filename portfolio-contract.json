@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "accepted_quote": "좋다, 이 방향성으로 정리해줘",
   "accepted_at": "2026-11-04T17:13:21.713+09:00",
   "purpose": "삼일PwC 면접 검토자가 면접 대상자로 선택하도록 돕는 포트폴리오",
@@ -8,7 +8,7 @@
   "support": "MABC 실행 결과 → NeurIPS 워크숍 연구 성과 → 확인된 커뮤니티 역할 → 현재 해커톤·공모전 통합 현황",
   "minor": "AI 뮤직비디오 · SBS 보도",
   "omit": "삼일 피드백·후속 구현·내부 테스트 장문",
-  "deployment": "Version 4 explicitly authorized for publication after making the MABC actual service output always visible. Deployment verification pending.",
+  "deployment": "Version 5 explicitly authorized for immediate publication; deployment verification recorded separately.",
   "required_order": [
     "samil",
     "execution",
@@ -21,9 +21,9 @@
   "reference": "Approved Samil-main local desktop and mobile render, 2026-11-04",
   "check_scope": "Structural regression guard only; rendered hierarchy and subjective acceptance remain separate.",
   "deployment_authorization": {
-    "version": 4,
-    "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
-    "recorded_at": "2026-11-04T22:33:40.080840+09:00"
+    "version": 5,
+    "quote": "아니다 MABC 다시 접어줘, 그 다음 바로 배포해줘",
+    "recorded_at": "2026-11-04T22:40:23.650946+09:00"
   },
   "revision_quote": "뉴립스를 잘 모르는 사람도 직관적으로 딱 알 수 있는 오른쪽 이미지 하나 / Bloom이 얼마나 대단한지 넌 진짜 조사를 하고 다시 짜봐 / ai tinkers VIP 저녁에도 초대",
   "revision_at": "2026-11-04T21:20:48.877329+09:00",
@@ -43,7 +43,7 @@
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
     "recorded_at": "2026-11-04T22:05:34.186161+09:00"
   },
-  "revision_status": "Version 4: local desktop and KR375/390/EN390 rendering checked; independent preflight and structure guard passed. Authorized for publication; live verification pending.",
+  "revision_status": "Version 5 MABC default-collapsed correction authorized for immediate deployment; other content retained.",
   "recognition_revision": {
     "scope": [
       "research context image",
@@ -100,6 +100,11 @@
       "version": 3,
       "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
       "recorded_at": "2026-11-04T22:05:34.186161+09:00"
+    },
+    {
+      "version": 4,
+      "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+      "recorded_at": "2026-11-04T22:33:40.080840+09:00"
     }
   ],
   "prior_revision_acceptance": {
@@ -173,11 +178,21 @@
     "checked_at": "2026-11-04T22:25:51.918307+09:00"
   },
   "execution_visibility_revision": {
-    "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
-    "recorded_at": "2026-11-04T22:33:40.080840+09:00",
-    "actual_service_output": "always visible, outside details",
+    "quote": "아니다 MABC 다시 접어줘, 그 다음 바로 배포해줘",
+    "recorded_at": "2026-11-04T22:40:23.650946+09:00",
+    "actual_service_output": "collapsed by default, inside details without open",
     "same_page_text": true,
     "samil_main": "unchanged",
-    "scope": "existing MABC result disclosure only"
-  }
+    "scope": "Only MABC output disclosure restored"
+  },
+  "execution_visibility_history": [
+    {
+      "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+      "recorded_at": "2026-11-04T22:33:40.080840+09:00",
+      "actual_service_output": "always visible, outside details",
+      "same_page_text": true,
+      "samil_main": "unchanged",
+      "scope": "existing MABC result disclosure only"
+    }
+  ]
 }
