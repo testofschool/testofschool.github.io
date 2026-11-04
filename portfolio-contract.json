@@ -1,24 +1,46 @@
 {
-  "version": 1,
+  "version": 2,
   "accepted_quote": "좋다, 이 방향성으로 정리해줘",
   "accepted_at": "2026-11-04T17:13:21.713+09:00",
   "purpose": "삼일PwC 면접 검토자가 면접 대상자로 선택하도록 돕는 포트폴리오",
   "priority_source": "삼일회계가 메인이지",
   "main": "삼일PwC 트랙 본선 진출 + 실제 본선 명찰",
-  "support": "NeurIPS 2026 워크숍 포스터 채택",
+  "support": "MABC 실행 결과 → NeurIPS 워크숍 연구 성과 → 확인된 커뮤니티 역할 → 현대차 진행 중 팀 기여",
   "minor": "AI 뮤직비디오 · SBS 보도",
   "omit": "삼일 피드백·후속 구현·내부 테스트 장문",
-  "deployment": "User authorized deployment of this accepted version; H2 fulfilled",
+  "deployment": "Version 2 rendered preview accepted and explicitly authorized for deployment; verify the Pages build and canonical live responses after push.",
   "required_order": [
     "samil",
+    "execution",
     "research",
+    "community",
+    "collaboration",
     "secondary",
     "contact"
   ],
   "reference": "Approved Samil-main local desktop and mobile render, 2026-11-04",
   "check_scope": "Structural regression guard only; rendered hierarchy and subjective acceptance remain separate.",
   "deployment_authorization": {
+    "version": 2,
+    "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+    "recorded_at": "2026-11-04T20:58:07.695290+09:00"
+  },
+  "revision_quote": "아쉬운 점은 후속 컨텐츠가 없다는 거야 / 나는 실행력이 강점이니까 MABC 결선이 몇명인지",
+  "revision_at": "2026-11-04T20:28:55.886194+09:00",
+  "unresolved": [],
+  "community_role_clarification": {
+    "display": "AI Tinkerers Seoul · 챕터 운영 지원",
+    "evidence_grade": "User-confirmed informal role; official registration not claimed",
+    "public_link_scope": "Chapter identity only"
+  },
+  "prior_deployment_authorization": {
+    "version": 1,
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에 반영됐는지 확인해줘.",
     "recorded_at": "2026-11-04T18:29:44.622760+09:00"
+  },
+  "revision_acceptance": {
+    "version": 2,
+    "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+    "recorded_at": "2026-11-04T20:58:07.695290+09:00"
   }
 }

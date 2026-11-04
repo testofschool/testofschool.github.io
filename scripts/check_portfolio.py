@@ -66,6 +66,18 @@ def check(root):
             label=' '.join(n.text() for n in research.walk() if n.tag in ('h1','h2') or n.has_class('accepted'))
             scope=['NeurIPS 2026','워크숍','포스터 채택'] if rel.startswith('kr') else ['NeurIPS 2026','Workshop','poster accepted']
             if not all(x in label for x in scope): issues.append(f'{rel}: research acceptance scope changed')
+        if contract.get('version', 1) >= 2:
+            for cls, required in {
+                'execution': ['50팀', '4,200여 명', '규정다름'] if rel.startswith('kr') else ['50 finalist teams', '4,200 participants', 'Gyujeong Dareum'],
+                'community': ['블룸 가드너', 'AI Tinkerers Seoul', '챕터 운영 지원'] if rel.startswith('kr') else ['Bloom Gardener', 'AI Tinkerers Seoul', 'Supporting the Seoul chapter'],
+                'collaboration': ['참여 중', '데이터', '음향'] if rel.startswith('kr') else ['In progress', 'Data', 'audio'],
+            }.items():
+                section=next((n for n in sections if n.has_class(cls)),None)
+                if section is None or not all(s in section.text() for s in required):
+                    issues.append(f'{rel}: {cls} required result/role scope missing')
+            execution=next((n for n in sections if n.has_class('execution')),None)
+            if execution and not any(n.tag=='img' and 'mabc-finalist.webp' in n.attrs.get('src','') for n in execution.walk()):
+                issues.append(f'{rel}: original MABC certificate missing')
         if not any(n.tag=='a' and n.has_class('contact-button') and n.attrs.get('href')=='mailto:gangjeongmin23@gmail.com' for n in nodes):
             issues.append(f'{rel}: interview contact path missing')
         pages.append({'file':rel,'observed_order':order})
