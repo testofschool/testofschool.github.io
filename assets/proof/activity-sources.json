@@ -1,0 +1,34 @@
+{
+  "observed_date": "2026-11-04",
+  "purpose": "Event identity marks only; not applicant endorsements",
+  "sources": [
+    {
+      "file": "activity-kiro-icon.svg",
+      "url": "https://kiro.dev/icon.svg?fe599162bb293ea0",
+      "observed_on": "https://kiro.dev/",
+      "bytes": 1527,
+      "status": 200
+    },
+    {
+      "file": "activity-meta-symbol.svg",
+      "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+      "observed_on": "https://about.meta.com/",
+      "bytes": 8912,
+      "status": 200
+    },
+    {
+      "file": "activity-neurips-logo.svg",
+      "url": "https://neurips.cc/static/core/img/NeurIPS-logo.svg",
+      "observed_on": "https://neurips.cc/",
+      "bytes": 36247,
+      "status": 200
+    },
+    {
+      "file": "activity-amazon-developer.png",
+      "url": "https://df8gj0gzff79.cloudfront.net/amz-dev-portal/assets/logo/amazon_footer_logo.png",
+      "observed_on": "https://developer.amazon.com/",
+      "bytes": 6838,
+      "status": 200
+    }
+  ]
+}

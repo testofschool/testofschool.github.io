@@ -15,7 +15,7 @@
 
 2026-11-04 사용자 승인 방향: “좋다, 이 방향성으로 정리해줘”. 기준은 `portfolio-contract.json`과 `AGENTS.md`에 보존한다. 내용·순서 수정 후 `python3 scripts/check_portfolio.py`로 구조 회귀를 확인하고, 배치 변경은 실제 화면도 확인한다.
 
-이름과 아이콘 연락처 → **삼일PwC 트랙 본선 진출 + 실제 명찰을 크게 보여주는 첫 화면** → MABC 결선과 규정다름 실행 결과 → NeurIPS 2026 워크숍 포스터 채택 연구 → 커뮤니티 역할 → 현대차 공모전 진행 중 팀 기여 → 작은 MV 썸네일 → 접힌 이력 → 커피챗 연락.
+이름과 아이콘 연락처 → **삼일PwC 트랙 본선 진출 + 실제 명찰을 크게 보여주는 첫 화면** → MABC 결선과 규정다름 실행 결과 → NeurIPS 2026 워크숍 포스터 채택 연구 → 커뮤니티 역할 → 현재 해커톤·공모전 통합 현황 → 작은 MV 썸네일 → 접힌 이력 → 커피챗 연락.
 
 삼일 본선 경험은 검토자와 공감대를 만드는 메인이다. 본선 진출 사실에서 문구를 멈추며 후속 구현, 피드백, 내부 테스트 수치는 페이지에 노출하지 않는다. MABC 실행 결과와 연구를 후속 근거로 배치하고, MV는 작은 보조 항목으로 둔다. 실제 명찰 사진은 카메라 방향을 정규화하고 비율을 유지해 웹용으로 인코딩했으며 EXIF/GPS 메타데이터는 포함하지 않는다. 생성 이미지나 재제작 명찰이 아니다. 원문 논문과 공식 채택 기록은 바로 열 수 있으며, 연구 요약은 네이티브 `<details>`로 펼친다. 모든 연락/언어/원문 링크와 펼치기는 JavaScript 없이 동작한다.
 
@@ -25,7 +25,7 @@
 
 큰 그림은 원본 분석 데이터에서 다시 그린 순위 비교다. 같은 정규화된 관측 점수 행렬의 단순 평균 순위와 2PL 잠재특성 추정 순위를 비교한다. 162개 모델 중 ProGAL-VLA가 99위와 22위로 77칸 차이를 보였다. 이는 집계 모형에 따른 불일치이며 정확도 개선·정답 순위 회복을 의미하지 않는다. 논문에 실린 원본 그림으로 표시하지 않는다. 별도 EFSL 논문 결과를 이 채택 연구와 합치지 않는다.
 
-뮤직비디오는 2인 팀 공동 제작 이력이며 [실제 영상](https://www.youtube.com/watch?v=JsT445NqkMk)과 [SBS 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859)로 연결한다. 트랙션을 추정하지 않는다. MABC 결선 증서는 크게 노출하고 서비스 결과 원본과 언어 이력은 기본 닫힘 상태다.
+뮤직비디오는 2인 팀 공동 제작 이력이며 [실제 영상](https://www.youtube.com/watch?v=JsT445NqkMk)과 [SBS 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008024859)로 연결한다. 트랙션을 추정하지 않는다. MABC 결선 증서는 크게 노출하고, 실제 서비스 결과 원본은 클릭 없이 바로 보여준다. 언어 이력은 기본 닫힘 상태다.
 
 ## 유지보수와 검증
 
@@ -49,3 +49,13 @@ The user retains Samil as the main proof and requests execution-led follow-up: M
 ## Recognition revision · version 3
 
 Version 3 preserves the accepted order and Samil main. The research image is a venue-sourced NeurIPS poster-hall photograph, labeled as event context; the applicant result remains a 2026 workshop poster acceptance with presentation in preparation. The Transformer context diagram and research chart are retained in the disclosure. Bloom now shows an original cohort photograph, the official 55-applicant/6-selected record and named hackathon operations credit. AI Tinkerers shows an unchanged official dinner photograph, the founder’s actual professional reason for the invitation and small official OpenAI / Anthropic / Google DeepMind logos labeled as global-community supporters. Informal Seoul chapter support remains separately labeled. Raw email headers, RSVP links and private logistics are excluded. The closing now states ongoing hackathon/community participation and startup preparation, with a coffee-chat invitation, as explicitly requested. The user accepted this version and explicitly authorized publication on 2026-11-04. Verify the Pages build commit and canonical live KR/EN content after push.
+
+## Current activity consolidation · version 4
+
+User-requested narrow delta: replace the Hyundai-only team section with a single “해커톤·공모전 / 참여 중” overview. Seven entries: Hyundai Pleos, Kiroween, Meta, Google Cloud AI Builder Cup, Amazon Developer Hackathon, NeurIPS PAIEC and AIMO Interpretability Challenge. Small labels distinguish team development/preparation, approval, submission and review. PAIEC/AIMO submissions are separate from the accepted workshop poster. No new award, ranking, customer adoption or team-use claim is added. The existing Hyundai experiment remains in a disclosure.
+
+The entry set comes from inspected correspondence and current local originals. Pending OBA.RUN approval and incomplete Apart registration are not promoted to confirmed participation. Official Meta, Kiro, Amazon and NeurIPS marks identify events, not endorsements of the applicant; other entries use simple line icons. Asset URLs are in `assets/proof/activity-sources.json`.
+
+The live version-3 page was audited from first view to contact, including disclosures, against the current official Samil FDE selection context. Findings are analysis, not observed judge feedback. The Samil, research, community, minor MV and contact units remain byte-for-byte retained in KR/EN. MABC retains the same text and assets, with the service output moved outside its disclosure. The user explicitly authorized version 4 publication after making the existing MABC service output always visible, with no extra wording and the Samil main preserved. Saved, tested, published and live-verified status are tracked separately.
+
+The MABC output is a permanent figure outside `<details>`. Its existing label, sample caption and original image are retained without adding page text. This visibility-only correction applies equally to KR/EN.

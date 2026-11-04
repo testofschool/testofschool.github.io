@@ -70,7 +70,7 @@ def check(root):
             for cls, required in {
                 'execution': ['50팀', '4,200여 명', '규정다름'] if rel.startswith('kr') else ['50 finalist teams', '4,200 participants', 'Gyujeong Dareum'],
                 'community': ['블룸 가드너', 'AI Tinkerers Seoul', '챕터 운영 지원'] if rel.startswith('kr') else ['Bloom Gardener', 'AI Tinkerers Seoul', 'Supporting the Seoul chapter'],
-                'collaboration': ['참여 중', '데이터', '음향'] if rel.startswith('kr') else ['In progress', 'Data', 'audio'],
+                'collaboration': (['참여 중', '해커톤·공모전'] if rel.startswith('kr') else ['Participating', 'Hackathons & competitions']) if contract.get('version', 1) >= 4 else (['참여 중', '데이터', '음향'] if rel.startswith('kr') else ['In progress', 'Data', 'audio']),
             }.items():
                 section=next((n for n in sections if n.has_class(cls)),None)
                 if section is None or not all(s in section.text() for s in required):
@@ -78,6 +78,28 @@ def check(root):
             execution=next((n for n in sections if n.has_class('execution')),None)
             if execution and not any(n.tag=='img' and 'mabc-finalist.webp' in n.attrs.get('src','') for n in execution.walk()):
                 issues.append(f'{rel}: original MABC certificate missing')
+            if contract.get('execution_visibility_revision') and execution:
+                output=next((n for n in execution.walk() if n.tag=='img' and 'mabc-service-sample.webp' in n.attrs.get('src','')),None)
+                if output is None:
+                    issues.append(f'{rel}: actual MABC output missing')
+                else:
+                    ancestor=output.parent
+                    while ancestor is not None:
+                        if ancestor.tag=='details' or 'hidden' in ancestor.attrs:
+                            issues.append(f'{rel}: actual MABC output must be visible without expanding a disclosure')
+                            break
+                        ancestor=ancestor.parent
+        if contract.get('version', 1) >= 4:
+            activities={n.attrs.get('data-activity'):n for n in nodes if n.tag=='li' and n.attrs.get('data-activity')}
+            expected=contract['ongoing_activity_revision']['entries']
+            if list(activities)!=[entry['id'] for entry in expected]:
+                issues.append(f'{rel}: confirmed current activity inventory changed')
+            for entry in expected:
+                item=activities.get(entry['id'])
+                if item is None: continue
+                state=entry['status_ko' if rel.startswith('kr') else 'status_en']
+                if state not in item.text() or not any(n.tag=='a' and n.attrs.get('href')==entry['href'] for n in item.walk()):
+                    issues.append(f'{rel}: {entry["id"]} current state/source missing')
         if not any(n.tag=='a' and n.has_class('contact-button') and n.attrs.get('href')=='mailto:gangjeongmin23@gmail.com' for n in nodes):
             issues.append(f'{rel}: interview contact path missing')
         pages.append({'file':rel,'observed_order':order})

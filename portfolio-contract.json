@@ -1,14 +1,14 @@
 {
-  "version": 3,
+  "version": 4,
   "accepted_quote": "좋다, 이 방향성으로 정리해줘",
   "accepted_at": "2026-11-04T17:13:21.713+09:00",
   "purpose": "삼일PwC 면접 검토자가 면접 대상자로 선택하도록 돕는 포트폴리오",
   "priority_source": "삼일회계가 메인이지",
   "main": "삼일PwC 트랙 본선 진출 + 실제 본선 명찰",
-  "support": "MABC 실행 결과 → NeurIPS 워크숍 연구 성과 → 확인된 커뮤니티 역할 → 현대차 진행 중 팀 기여",
+  "support": "MABC 실행 결과 → NeurIPS 워크숍 연구 성과 → 확인된 커뮤니티 역할 → 현재 해커톤·공모전 통합 현황",
   "minor": "AI 뮤직비디오 · SBS 보도",
   "omit": "삼일 피드백·후속 구현·내부 테스트 장문",
-  "deployment": "Version 3 approved for publication on 2026-11-04. Build and canonical live verification are recorded separately. Prior verified release: 24895451147c7f631b00132f71d5c7f9765e1aa6.",
+  "deployment": "Version 4 explicitly authorized for publication after making the MABC actual service output always visible. Deployment verification pending.",
   "required_order": [
     "samil",
     "execution",
@@ -21,9 +21,9 @@
   "reference": "Approved Samil-main local desktop and mobile render, 2026-11-04",
   "check_scope": "Structural regression guard only; rendered hierarchy and subjective acceptance remain separate.",
   "deployment_authorization": {
-    "version": 3,
-    "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
-    "recorded_at": "2026-11-04T22:05:34.186161+09:00"
+    "version": 4,
+    "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+    "recorded_at": "2026-11-04T22:33:40.080840+09:00"
   },
   "revision_quote": "뉴립스를 잘 모르는 사람도 직관적으로 딱 알 수 있는 오른쪽 이미지 하나 / Bloom이 얼마나 대단한지 넌 진짜 조사를 하고 다시 짜봐 / ai tinkers VIP 저녁에도 초대",
   "revision_at": "2026-11-04T21:20:48.877329+09:00",
@@ -43,7 +43,7 @@
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
     "recorded_at": "2026-11-04T22:05:34.186161+09:00"
   },
-  "revision_status": "Version 3 accepted by the user and authorized for publication; deployment verification is a separate stage.",
+  "revision_status": "Version 4: local desktop and KR375/390/EN390 rendering checked; independent preflight and structure guard passed. Authorized for publication; live verification pending.",
   "recognition_revision": {
     "scope": [
       "research context image",
@@ -95,11 +95,89 @@
       "version": 2,
       "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
       "recorded_at": "2026-11-04T20:58:07.695290+09:00"
+    },
+    {
+      "version": 3,
+      "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+      "recorded_at": "2026-11-04T22:05:34.186161+09:00"
     }
   ],
   "prior_revision_acceptance": {
     "version": 2,
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
     "recorded_at": "2026-11-04T20:58:07.695290+09:00"
+  },
+  "ongoing_activity_revision": {
+    "version": 4,
+    "user_quote": "마지막 슬라이드인 팀협업은 그냥 지금 내가 참여하고 있는 모든 해커톤을 통합적으로 볼 수 있게 합쳐줘 그리고 참여 중 이라고 쓰고.",
+    "observed_at": "2026-11-04T22:22:25.920322+09:00",
+    "scope": "Only existing collaboration section; all other main/support units retained",
+    "label_ko": "참여 중",
+    "evidence_scope": "Seven current entries established by 7 targeted mail queries, 16 original messages and relevant workspace originals; not a universal completeness claim",
+    "unconfirmed_excluded": [
+      "OBA.RUN approval pending",
+      "Apart registration completion unconfirmed"
+    ],
+    "entries": [
+      {
+        "id": "hyundai",
+        "name": "현대자동차그룹 차량용 앱 개발 공모전",
+        "status_ko": "팀 개발 중",
+        "status_en": "Team development",
+        "href": "https://kona-stereo-sound-lab.almond-hen-6920.chatgpt.site/"
+      },
+      {
+        "id": "kiroween",
+        "name": "Kiroween 2026",
+        "status_ko": "팀 준비 중",
+        "status_en": "Team preparation",
+        "href": "https://kiroween.devpost.com/"
+      },
+      {
+        "id": "meta",
+        "name": "Meta Global AI Developer Hackathon",
+        "status_ko": "참가 승인",
+        "status_en": "Approved",
+        "href": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon"
+      },
+      {
+        "id": "google",
+        "name": "Google Cloud AI Builder Cup 2026",
+        "status_ko": "제출 · 심사 중",
+        "status_en": "Under evaluation",
+        "href": "https://github.com/testofschool/preflight"
+      },
+      {
+        "id": "amazon",
+        "name": "Build, Ship, Shape: Amazon Developer Hackathon",
+        "status_ko": "제출 · 심사 대기",
+        "status_en": "Awaiting review",
+        "href": "https://amazonappdev2026.devpost.com/"
+      },
+      {
+        "id": "paiec",
+        "name": "NeurIPS 2026 Predictive AI Evaluation Competition (PAIEC)",
+        "status_ko": "리포트 제출",
+        "status_en": "Report submitted",
+        "href": "https://openreview.net/forum?id=u6KyZI9hS4"
+      },
+      {
+        "id": "aimo",
+        "name": "AIMO Interpretability Challenge",
+        "status_ko": "리포트 제출",
+        "status_en": "Report submitted",
+        "href": "https://openreview.net/forum?id=kPRRCYEOG1"
+      }
+    ],
+    "stage": "LOCAL_IMPLEMENTED_AND_TECHNICALLY_VERIFIED",
+    "checked_at": "2026-11-04T22:25:51.918307+09:00"
+  },
+  "execution_visibility_revision": {
+    "quote": "그럼 MABC 실제 결과 화면도 접지 말고 바로 보이게 해줘. 삼일 메인은 유지하고 글자는 늘리지 말고. 수정 끝나면 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+    "recorded_at": "2026-11-04T22:33:40.080840+09:00",
+    "actual_service_output": "always visible, outside details",
+    "same_page_text": true,
+    "samil_main": "unchanged",
+    "scope": "existing MABC result disclosure only"
   }
 }
