@@ -15,7 +15,7 @@
 
 2026-11-04 사용자 승인 방향: “좋다, 이 방향성으로 정리해줘”. 기준은 `portfolio-contract.json`과 `AGENTS.md`에 보존한다. 내용·순서 수정 후 `python3 scripts/check_portfolio.py`로 구조 회귀를 확인하고, 배치 변경은 실제 화면도 확인한다.
 
-이름과 아이콘 연락처 → **삼일PwC 트랙 본선 진출 + 실제 명찰을 크게 보여주는 첫 화면** → MABC 결선과 규정다름 실행 결과 → NeurIPS 2026 워크숍 포스터 채택 연구 → 커뮤니티 역할 → 현대차 공모전 진행 중 팀 기여 → 작은 MV 썸네일 → 접힌 이력 → 면접 연락.
+이름과 아이콘 연락처 → **삼일PwC 트랙 본선 진출 + 실제 명찰을 크게 보여주는 첫 화면** → MABC 결선과 규정다름 실행 결과 → NeurIPS 2026 워크숍 포스터 채택 연구 → 커뮤니티 역할 → 현대차 공모전 진행 중 팀 기여 → 작은 MV 썸네일 → 접힌 이력 → 커피챗 연락.
 
 삼일 본선 경험은 검토자와 공감대를 만드는 메인이다. 본선 진출 사실에서 문구를 멈추며 후속 구현, 피드백, 내부 테스트 수치는 페이지에 노출하지 않는다. MABC 실행 결과와 연구를 후속 근거로 배치하고, MV는 작은 보조 항목으로 둔다. 실제 명찰 사진은 카메라 방향을 정규화하고 비율을 유지해 웹용으로 인코딩했으며 EXIF/GPS 메타데이터는 포함하지 않는다. 생성 이미지나 재제작 명찰이 아니다. 원문 논문과 공식 채택 기록은 바로 열 수 있으며, 연구 요약은 네이티브 `<details>`로 펼친다. 모든 연락/언어/원문 링크와 펼치기는 JavaScript 없이 동작한다.
 
@@ -45,3 +45,7 @@
 ## Follow-up expansion · 2026-11-04
 
 The user retains Samil as the main proof and requests execution-led follow-up: MABC service and finalist certificate → NeurIPS workshop research → verified community role → ongoing Hyundai team contribution. The user accepted the aligned KR/EN preview and explicitly authorized version 2 deployment on 2026-11-04. Exact authorization and verification scope are recorded in portfolio-contract.json. After push, verify the built commit and canonical live KR/EN pages and their linked assets.
+
+## Recognition revision · version 3
+
+Version 3 preserves the accepted order and Samil main. The research image is a venue-sourced NeurIPS poster-hall photograph, labeled as event context; the applicant result remains a 2026 workshop poster acceptance with presentation in preparation. The Transformer context diagram and research chart are retained in the disclosure. Bloom now shows an original cohort photograph, the official 55-applicant/6-selected record and named hackathon operations credit. AI Tinkerers shows an unchanged official dinner photograph, the founder’s actual professional reason for the invitation and small official OpenAI / Anthropic / Google DeepMind logos labeled as global-community supporters. Informal Seoul chapter support remains separately labeled. Raw email headers, RSVP links and private logistics are excluded. The closing now states ongoing hackathon/community participation and startup preparation, with a coffee-chat invitation, as explicitly requested. The user accepted this version and explicitly authorized publication on 2026-11-04. Verify the Pages build commit and canonical live KR/EN content after push.

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "accepted_quote": "좋다, 이 방향성으로 정리해줘",
   "accepted_at": "2026-11-04T17:13:21.713+09:00",
   "purpose": "삼일PwC 면접 검토자가 면접 대상자로 선택하도록 돕는 포트폴리오",
@@ -8,7 +8,7 @@
   "support": "MABC 실행 결과 → NeurIPS 워크숍 연구 성과 → 확인된 커뮤니티 역할 → 현대차 진행 중 팀 기여",
   "minor": "AI 뮤직비디오 · SBS 보도",
   "omit": "삼일 피드백·후속 구현·내부 테스트 장문",
-  "deployment": "Version 2 rendered preview accepted and explicitly authorized for deployment; verify the Pages build and canonical live responses after push.",
+  "deployment": "Version 3 approved for publication on 2026-11-04. Build and canonical live verification are recorded separately. Prior verified release: 24895451147c7f631b00132f71d5c7f9765e1aa6.",
   "required_order": [
     "samil",
     "execution",
@@ -21,12 +21,12 @@
   "reference": "Approved Samil-main local desktop and mobile render, 2026-11-04",
   "check_scope": "Structural regression guard only; rendered hierarchy and subjective acceptance remain separate.",
   "deployment_authorization": {
-    "version": 2,
+    "version": 3,
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
-    "recorded_at": "2026-11-04T20:58:07.695290+09:00"
+    "recorded_at": "2026-11-04T22:05:34.186161+09:00"
   },
-  "revision_quote": "아쉬운 점은 후속 컨텐츠가 없다는 거야 / 나는 실행력이 강점이니까 MABC 결선이 몇명인지",
-  "revision_at": "2026-11-04T20:28:55.886194+09:00",
+  "revision_quote": "뉴립스를 잘 모르는 사람도 직관적으로 딱 알 수 있는 오른쪽 이미지 하나 / Bloom이 얼마나 대단한지 넌 진짜 조사를 하고 다시 짜봐 / ai tinkers VIP 저녁에도 초대",
+  "revision_at": "2026-11-04T21:20:48.877329+09:00",
   "unresolved": [],
   "community_role_clarification": {
     "display": "AI Tinkerers Seoul · 챕터 운영 지원",
@@ -39,6 +39,65 @@
     "recorded_at": "2026-11-04T18:29:44.622760+09:00"
   },
   "revision_acceptance": {
+    "version": 3,
+    "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+    "recorded_at": "2026-11-04T22:05:34.186161+09:00"
+  },
+  "revision_status": "Version 3 accepted by the user and authorized for publication; deployment verification is a separate stage.",
+  "recognition_revision": {
+    "scope": [
+      "research context image",
+      "Bloom selection and operations proof",
+      "AI Tinkerers founder invitation",
+      "AI Tinkerers actual dinner photo and global-community supporters",
+      "NeurIPS venue-context photograph with presentation preparation status",
+      "Current activities and coffee chat closing"
+    ],
+    "preserved_order": true,
+    "evidence": [
+      "NeurIPS official 2017 Transformer paper and OpenAI technical context",
+      "Bloom official 55-to-6 cohort and unique event applicant count",
+      "Named organizer operations recap",
+      "Inspected founder invitation citing production pipeline experience",
+      "Official gallery photograph posted by Joe Heitzeberg, event ID matched to inspected confirmation email",
+      "Official homepage and sponsor page: OpenAI, Anthropic and Google DeepMind support the global community"
+    ],
+    "dinner_delta": {
+      "quote": "디너 사진을 웹사이트 들어가보면 있을 거야 / 글로벌 커뮤니티야",
+      "observed_at": "2026-11-04T21:38:41.444303+09:00",
+      "applied": "Large unchanged original photo + small official global supporter logos; prior hierarchy retained",
+      "status": "USER_ACCEPTED_FOR_PUBLICATION"
+    },
+    "poster_photo_contact_delta": {
+      "quote": "아직 포스터 발표 준비 중 / 더 직관적인 사진 / 여러 해커톤과 커뮤니티 참여와 예비 창업 준비중 / 커피챗은 언제나 환영",
+      "at": "2026-11-04T21:52:12.919961+09:00",
+      "main_support_order": "retained",
+      "research_status": "Workshop poster accepted; presentation in preparation",
+      "photo_scope": "Venue official NeurIPS event illustration; actual capture year unestablished",
+      "contact": "Coffee chat invitation, with multiple activities and startup preparation",
+      "evidence": "Email approval/receipt originals inspected; startup preparation is user-confirmed",
+      "stage": "USER_ACCEPTED_FOR_PUBLICATION"
+    }
+  },
+  "contact_action": {
+    "heading_ko": "커피챗은 언제나 환영합니다.",
+    "label_ko": "커피챗 제안하기",
+    "destination": "mailto:gangjeongmin23@gmail.com",
+    "authority": "Explicit current user request"
+  },
+  "deployment_authorization_history": [
+    {
+      "version": 1,
+      "quote": "좋아, 이 버전으로 배포하고 실제 사이트에 반영됐는지 확인해줘.",
+      "recorded_at": "2026-11-04T18:29:44.622760+09:00"
+    },
+    {
+      "version": 2,
+      "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
+      "recorded_at": "2026-11-04T20:58:07.695290+09:00"
+    }
+  ],
+  "prior_revision_acceptance": {
     "version": 2,
     "quote": "좋아, 이 버전으로 배포하고 실제 사이트에도 제대로 반영됐는지 확인해줘.",
     "recorded_at": "2026-11-04T20:58:07.695290+09:00"
