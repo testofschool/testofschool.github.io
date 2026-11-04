@@ -79,7 +79,7 @@ def check(root):
             if execution and not any(n.tag=='img' and 'mabc-finalist.webp' in n.attrs.get('src','') for n in execution.walk()):
                 issues.append(f'{rel}: original MABC certificate missing')
             if contract.get('execution_visibility_revision') and execution:
-                output=next((n for n in execution.walk() if n.tag=='img' and 'mabc-service-sample.webp' in n.attrs.get('src','')),None)
+                output=next((n for n in execution.walk() if n.tag=='img' and 'mabc-service-sample.jpg' in n.attrs.get('src','')),None)
                 if output is None:
                     issues.append(f'{rel}: actual MABC output missing')
                 else:
